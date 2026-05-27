@@ -1,0 +1,47 @@
+{
+  "ville": "Aix-en-Provence",
+  "slug": "aix-en-provence",
+  "domaine": "depannage-rideau-metallique-aix-en-provence.fr",
+  "telephone": "",
+  "telephone_public": false,
+  "adresse": "2 Rue Andre Chenier, 13100 Aix-en-Provence",
+  "template_id": "template-14",
+  "current_phase": 3,
+  "phases": {
+    "0": {
+      "status": "completed",
+      "completed_at": null
+    },
+    "1": {
+      "status": "completed",
+      "completed_at": "2026-05-27T08:00:00Z",
+      "validate_page_result": "PASS (3256w/36img/17sec/15h2 homepage; bug script global GEO double-echo sur mode homepage uniquement)"
+    },
+    "2": {
+      "status": "completed",
+      "completed_at": "2026-05-27T08:05:00Z",
+      "validate_page_result": "PASS (7 services Aix center: 1250-1314w, 12 sec, 0 FAIL chacun)"
+    },
+    "3": {
+      "status": "in_progress",
+      "completed_at": null
+    },
+    "4": {
+      "status": "pending",
+      "completed_at": null
+    },
+    "5": {
+      "status": "pending",
+      "completed_at": null
+    },
+    "6": {
+      "status": "pending",
+      "completed_at": null
+    },
+    "7": {
+      "status": "pending",
+      "completed_at": null
+    }
+  },
+  "notes": "Template-14 Roofer (inutilise DRM), palette olivier+ocre Provence, 22 zones dept 13 + Pertuis 84, tel MASQUE (Angelo cablera apres), adresse interim BAN OSM apartments centre Aix (cours Mirabeau). Favicon placeholder (Biarritz fallback) car OPENAI_API_KEY expiree \u2014 a regenerer Phase 5 ou plus tard."
+}

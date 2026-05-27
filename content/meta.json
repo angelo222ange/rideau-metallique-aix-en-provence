@@ -1,0 +1,51 @@
+{
+  "template_id": "template-14",
+  "template_name": "Roofer",
+  "template_source": "https://templates.framer.com/roofer/",
+  "ville": "Aix-en-Provence",
+  "departement": "Bouches-du-Rhone",
+  "departement_code": "13",
+  "region": "Provence-Alpes-Cote d'Azur",
+  "telephone": "",
+  "telephone_public": false,
+  "domaine": "depannage-rideau-metallique-aix-en-provence.fr",
+  "hero_bg_file": "hero-rideau-micro-perforee.webp",
+  "section_mapping": {
+    "hero": "hero",
+    "about": "presentation",
+    "process": "methode_depannage",
+    "services": "services_drm",
+    "mini_cta": "cta_urgence",
+    "works": "realisations",
+    "testimonials": "avis_google",
+    "faq": "faq_drm",
+    "blog": "blog",
+    "homepage_seo_blocks": "blocs_seo_drm"
+  },
+  "missing_sections": ["zones_intervention", "marques_partenaires", "stats_confiance"],
+  "design_tokens": {
+    "colors": {
+      "primary": "#2D3F2A",
+      "accent": "#C28840",
+      "light_bg": "#F5F1E6",
+      "dark_bg": "#1A1F18"
+    },
+    "fonts": {
+      "heading": "Plus Jakarta Sans",
+      "body": "Inter"
+    },
+    "layout": {
+      "max_width": 1280,
+      "section_padding": "80px 30px",
+      "card_radius": 12,
+      "button_radius": 6
+    }
+  },
+  "palette": {
+    "inspiration": "Pays d'Aix : vert olivier sombre (olivettes de la Sainte-Victoire) + ocre/sienne (facades calcaire du cours Mirabeau, terre cuite provencale) + creme calcaire (pierre d'Aix). Template-14 Roofer cream+dark conserve, bronze remplace par ocre plus chaud.",
+    "primary": "#2D3F2A",
+    "accent": "#C28840",
+    "light_bg": "#F5F1E6"
+  },
+  "created_at": "2026-05-27"
+}

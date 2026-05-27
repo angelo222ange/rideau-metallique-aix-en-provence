@@ -1,0 +1,27 @@
+{
+  "source": "https://roofer.framer.website/services",
+  "fetched": "2026-05-13",
+  "services": [
+    { "file": "service-free-inspection.svg", "title": "Free Inspection", "color": "amber", "reuse": "Inspection / audit / diagnostic" },
+    { "file": "service-commercial-roofing.svg", "title": "Commercial Roofing", "color": "amber", "reuse": "Toiture pro / batiment / industriel" },
+    { "file": "service-roof-replacement.svg", "title": "Roof Replacement", "color": "amber", "reuse": "Remplacement complet / refection" },
+    { "file": "service-solar-panels.svg", "title": "Solar Panels", "color": "amber", "reuse": "Panneaux solaires / energie / photovoltaique" },
+    { "file": "service-damage-repairs.svg", "title": "Damage Repairs", "color": "amber", "reuse": "Reparation degats / urgence / sinistre" },
+    { "file": "service-roof-renovation.svg", "title": "Roof Renovation", "color": "amber", "reuse": "Renovation / chantier / construction" }
+  ],
+  "ui": [
+    { "file": "check-amber.svg", "reuse": "Liste benefices / why-choose-us bullets" },
+    { "file": "chevron-right.svg", "reuse": "Learn More / card link arrow" },
+    { "file": "faq-toggle.svg", "reuse": "Accordion FAQ open/close" },
+    { "file": "logo-roofer.svg", "reuse": "Logo source — a remplacer" },
+    { "file": "brand-watermark.svg", "reuse": "Watermark CTA dark — a remplacer" },
+    { "file": "google-logo.svg", "reuse": "Logo Google sur cards avis" },
+    { "file": "avatar-placeholder.svg", "reuse": "Avatar testimonial fallback" }
+  ],
+  "stats": [
+    { "file": "stat-1.svg", "reuse": "Avatar cluster social proof '1550+ happy clients' #1" },
+    { "file": "stat-2.svg", "reuse": "Avatar cluster #2" },
+    { "file": "stat-3.svg", "reuse": "Avatar cluster #3" },
+    { "file": "stat-4.svg", "reuse": "Avatar cluster #4" }
+  ]
+}

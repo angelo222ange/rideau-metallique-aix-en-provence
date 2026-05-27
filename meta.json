@@ -1,0 +1,99 @@
+{
+  "id": "template-14",
+  "name": "Roofer",
+  "source": "https://roofer.framer.website/",
+  "style": "warm-amber-roofing",
+  "match_score": 100,
+  "sections": [
+    "hero-fullimg-overlay-stats",
+    "why-choose-us-left-right-checks",
+    "services-6cards-3col-grid",
+    "how-it-works-collage-numbered-steps",
+    "cta-dark-centered-roof-image",
+    "testimonials-google-3cards",
+    "blog-3cards-category-tag",
+    "faq-img-left-accordion-right",
+    "footer-dark-huge-logo"
+  ],
+  "colors": {
+    "bg": "#FFFFFF",
+    "bg_cream": "#F4F4EB",
+    "bg_dark": "#141414",
+    "heading": "#34342B",
+    "body": "#434338",
+    "muted": "#ADAD9F",
+    "accent": "#E1A356",
+    "accent_dark": "#C88A43",
+    "white": "#FFFFFF"
+  },
+  "fonts": {
+    "heading": "Plus Jakarta Sans",
+    "body": "Inter"
+  },
+  "typography": {
+    "h1_display": "104px / 1.05 / -1px / 700",
+    "h2_section": "64px / 1.15 / -0.5px / 700",
+    "h3_stat": "80px / 1 / -2px / 700",
+    "body_lg": "20px / 1.7 Inter 400",
+    "body": "18px / 1.7 Inter 400"
+  },
+  "layout": {
+    "max_width": 1280,
+    "container_padding_x": 30,
+    "section_padding_y": "84-140px",
+    "card_radius": 12,
+    "button_radius": 8,
+    "button_shadow": "0 4px 0 rgba(0,0,0,0.15)"
+  },
+  "breakpoints": {
+    "desktop_xl": "min-width: 1440px",
+    "desktop": "1200-1439.98px",
+    "tablet": "810-1199.98px",
+    "mobile": "max-width: 809.98px"
+  },
+  "best_for": [
+    "toiture",
+    "couvreur",
+    "solaire",
+    "artisan",
+    "services-local"
+  ],
+  "created_at": "2026-04-17",
+  "placeholder_images": false,
+  "section_mapping": {
+    "hero": "hero",
+    "why_choose_us": "presentation",
+    "services": "services_drm",
+    "how_it_works": "methode_depannage",
+    "cta": "cta_urgence",
+    "testimonials": "avis_google",
+    "blog": "blog",
+    "faq": "faq_drm",
+    "footer": "footer"
+  },
+  "missing_sections": [
+    "zones_intervention",
+    "seo_content",
+    "stats_confiance"
+  ],
+  "vertical_compatible": [
+    "vitrier",
+    "drm",
+    "porte-sectionnelle"
+  ],
+  "section_mapping_vitrier": {
+    "hero": "hero_vitrier",
+    "why_choose_us": "presentation_vitrier",
+    "services": "services_vitrier_7",
+    "how_it_works": "methode_intervention_vitrier",
+    "cta": "cta_urgence_24h",
+    "testimonials": "avis_google",
+    "blog": "blog",
+    "faq": "faq_vitrier",
+    "footer": "footer"
+  },
+  "missing_sections_vitrier": [
+    "stats_confiance",
+    "zones_intervention"
+  ]
+}

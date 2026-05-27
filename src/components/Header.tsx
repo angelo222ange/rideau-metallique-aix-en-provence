@@ -15,17 +15,17 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 bg-white border-b border-black/5">
       <div className="flex items-center justify-between h-[76px] px-5 md:px-10 max-w-[1280px] mx-auto">
-        <Link href="/" className="flex items-center gap-2" aria-label={siteConfig.brand}>
+        <Link href="/" className="flex items-center gap-3" aria-label={siteConfig.brand}>
           <Image
-            src="/favicon.png"
+            src="/images/logos/logo-drm-aix-en-provence.webp"
             alt={siteConfig.brand}
             title={siteConfig.brand}
-            width={40}
-            height={40}
-            style={{ borderRadius: 8 }}
+            width={56}
+            height={56}
+            style={{ borderRadius: "50%", objectFit: "contain" }}
             priority
           />
-          <span className="text-[18px] font-semibold text-[#181C16] tracking-tight">
+          <span className="text-[18px] font-semibold text-[#181C16] tracking-tight hidden sm:inline">
             {siteConfig.brand}
           </span>
         </Link>

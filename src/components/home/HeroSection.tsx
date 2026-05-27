@@ -1,13 +1,14 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { siteConfig } from "@/config/site";
 
 export default function HeroSection() {
   const heroAlt = `Depannage rideau metallique ${siteConfig.city} 24h/24 par DRM`;
   return (
     <section className="relative w-full px-2 md:px-[10px] pt-2 md:pt-[10px]">
-      <div className="relative w-full overflow-hidden rounded-[12px] min-h-[560px] md:min-h-[640px] lg:min-h-[700px]">
+      <div className="relative w-full overflow-hidden rounded-[12px] min-h-[600px] md:min-h-[680px] lg:min-h-[740px]">
         <img
           src={`/images/gallery/${siteConfig.heroBg}`}
           alt={heroAlt}
@@ -20,12 +21,24 @@ export default function HeroSection() {
           className="absolute inset-0 w-full h-full object-cover"
         />
         {/* Overlay sombre constant pour neutraliser fonds clairs */}
-        <div className="absolute inset-0 bg-[#1A1F18]/55" aria-hidden />
-        {/* Gradient renforce centre+bas pour bloc texte */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#1A1F18]/60 via-[#1A1F18]/50 to-[#1A1F18]/85" aria-hidden />
+        <div className="absolute inset-0 bg-[#1A1F18]/65" aria-hidden />
+        {/* Gradient renforce bas pour bloc texte */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#1A1F18]/50 via-[#1A1F18]/55 to-[#1A1F18]/90" aria-hidden />
 
-        <div className="relative z-10 flex flex-col items-center justify-center text-center px-5 md:px-10 py-16 md:py-24 min-h-[560px] md:min-h-[640px] lg:min-h-[700px]">
-          <span className="inline-block bg-[#C28840]/20 border border-[#C28840]/40 backdrop-blur-sm px-4 py-1.5 rounded-full text-[12px] tracking-[0.2em] uppercase text-white mb-6">
+        <div className="relative z-10 flex flex-col items-center justify-center text-center px-5 md:px-10 py-16 md:py-24 min-h-[600px] md:min-h-[680px] lg:min-h-[740px]">
+          {/* Logo officiel DRM Aix-en-Provence */}
+          <div className="mb-6 md:mb-8 bg-white/95 rounded-full p-2 shadow-2xl">
+            <Image
+              src="/images/logos/logo-drm-aix-en-provence.webp"
+              alt={`Logo ${siteConfig.brand}`}
+              title={siteConfig.brand}
+              width={140}
+              height={140}
+              priority
+              style={{ width: "auto", height: "auto", maxWidth: 140, maxHeight: 140, objectFit: "contain" }}
+            />
+          </div>
+          <span className="inline-block bg-[#C28840]/25 border border-[#C28840]/50 backdrop-blur-sm px-4 py-1.5 rounded-full text-[12px] tracking-[0.2em] uppercase text-white mb-5">
             [ Urgence 24h/24 &mdash; Pays d'Aix ]
           </span>
           <h1 className="text-white max-w-[900px] mx-auto" style={{ textShadow: "0 2px 8px rgba(0,0,0,0.5)" }}>

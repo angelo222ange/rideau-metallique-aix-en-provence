@@ -25,7 +25,7 @@ export const siteConfig = {
   rating: "4.9",
   ratingCount: "138",
   interventions: "5000+",
-  heroBg: "hero-rideau-micro-perforee.webp",
+  heroBg: "realisation-rideau-metallique-lame-pleine-commerce.webp",
 };
 
 export const services = [

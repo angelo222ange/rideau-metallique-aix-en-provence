@@ -42,7 +42,7 @@ export default function HeroSection() {
             [ Urgence 24h/24 &mdash; Pays d'Aix ]
           </span>
           <h1 className="text-white max-w-[900px] mx-auto" style={{ textShadow: "0 2px 8px rgba(0,0,0,0.5)" }}>
-            Depannage rideau metallique a {siteConfig.city} et en Pays d&apos;Aix, 24h/24
+            Depannage rideau metallique a {siteConfig.city}{" "}et en Pays d&apos;Aix, 24h/24
           </h1>
           <p className="text-white text-[17px] md:text-[19px] leading-[1.6] mt-6 max-w-[760px]" style={{ textShadow: "0 1px 6px rgba(0,0,0,0.6)" }}>
             Artisan local installe au pied de la Sainte-Victoire, {siteConfig.brand} intervient

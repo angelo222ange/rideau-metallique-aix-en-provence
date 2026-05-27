@@ -183,7 +183,7 @@ export default async function ServiceZonePage({ params }: { params: Promise<{ se
         <section className="bg-[#F5F1E6] py-14 md:py-20 px-5 md:px-10">
           <div className="max-w-[1280px] mx-auto">
             <div className="max-w-[820px] mb-8">
-              <h2 className="text-[#181C16] mb-3">Gestes techniques DRM pour {service.name} a {zoneName}</h2>
+              <h2 className="text-[#181C16] mb-3">Gestes techniques DRM pour le {service.name.toLowerCase()} de rideau metallique a {zoneName}</h2>
               <p className="text-[#4F5648] text-[16px] leading-relaxed">{content.typesIntro}</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -286,7 +286,7 @@ export default async function ServiceZonePage({ params }: { params: Promise<{ se
         {/* Zones voisines */}
         <section className="bg-[#F5F1E6] py-14 md:py-20 px-5 md:px-10">
           <div className="max-w-[1280px] mx-auto">
-            <h2 className="text-[#181C16] mb-3">{service.name} rideau metallique dans les communes voisines</h2>
+            <h2 className="text-[#181C16] mb-3">{service.name} de rideau metallique dans les communes voisines de {zoneName}</h2>
             <p className="text-[#4F5648] text-[16px] mb-8 max-w-[680px]">
               DRM {siteConfig.city} intervient avec les memes delais et tarifs dans les communes voisines de {zoneName}.
             </p>

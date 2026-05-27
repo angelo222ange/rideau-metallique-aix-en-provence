@@ -9,14 +9,18 @@ export default function Header() {
   return (
     <div className="sticky top-0 z-50 w-full px-4 sm:px-6 pt-2">
       <header className="header-pill container">
-        <Link href="/" className="flex items-center gap-2 shrink-0">
+        <Link href="/" className="flex items-center gap-2.5 shrink-0">
           <Image
             src={nav.logo.src}
             alt={nav.logo.alt}
-            width={nav.logo.width}
-            height={nav.logo.height}
+            width={40}
+            height={40}
             priority
+            style={{ width: 40, height: 40, objectFit: "contain" }}
           />
+          <span className="text-[16px] font-semibold text-[#050505] tracking-tight whitespace-nowrap">
+            DRM <span className="text-[#C28840]">Aix-en-Provence</span>
+          </span>
         </Link>
         <nav className="hidden md:flex items-center gap-8 text-[15px] font-medium">
           {nav.links.map((l) => (

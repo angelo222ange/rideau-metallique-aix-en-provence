@@ -3,7 +3,7 @@
 import { siteConfig as cfg } from "@/config/site";
 
 export const nav = {
-  logo: { src: "/images/logos/logo-drm-aix-en-provence.webp", alt: "DRM Aix-en-Provence", width: 88, height: 88 },
+  logo: { src: "/images/logos/logo-drm-aix-en-provence.webp", alt: "DRM Aix-en-Provence", width: 40, height: 40 },
   logoLight: { src: "/images/logos/logo-drm-aix-en-provence.webp", alt: "DRM Aix-en-Provence" },
   links: [
     { label: "Accueil", href: "/" },

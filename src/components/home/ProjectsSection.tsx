@@ -72,7 +72,7 @@ function ProjectCard({ tile }: { tile: (typeof projects.tiles)[number] }) {
         </div>
 
         <Link href={tile.href} className="btn-primary self-start mt-3">
-          VIEW PROJECT
+          VOIR LE PROJET
           <span className="btn-arrow-square">
             <ArrowRight />
           </span>

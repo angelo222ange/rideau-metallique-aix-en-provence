@@ -1,19 +1,15 @@
 import type { Metadata } from "next";
-import { Inter, Manrope } from "next/font/google";
-import { siteConfig } from "@/config/site";
+import { Onest } from "next/font/google";
 import "./globals.css";
+import "lenis/dist/lenis.css";
+import SmoothScroll from "@/components/SmoothScroll";
+import FloatingCallButton from "@/components/FloatingCallButton";
+import { siteConfig } from "@/config/site";
 
-const inter = Inter({
+const onest = Onest({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-inter",
-  display: "swap",
-});
-
-const manrope = Manrope({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-manrope",
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-onest",
   display: "swap",
 });
 
@@ -25,9 +21,17 @@ export const metadata: Metadata = {
   },
   description: `${siteConfig.brand} : depannage, installation, motorisation et fabrication de rideaux metalliques a ${siteConfig.city} et en Pays d'Aix. ${siteConfig.experience} ans d'experience, intervention sous ${siteConfig.delai} minutes, devis gratuit, garantie 2 ans.`,
   applicationName: siteConfig.brand,
-  alternates: {
-    canonical: siteConfig.url + "/",
+  alternates: { canonical: siteConfig.url + "/" },
+  icons: {
+    icon: [
+      { url: "/favicon.png", sizes: "48x48", type: "image/png" },
+      { url: "/favicon-64.png", sizes: "64x64", type: "image/png" },
+      { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
+      { url: "/icon-512.png", sizes: "512x512", type: "image/png" },
+    ],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
   },
+  manifest: "/site.webmanifest",
   openGraph: {
     type: "website",
     locale: "fr_FR",
@@ -44,30 +48,25 @@ export const metadata: Metadata = {
       },
     ],
   },
-  icons: {
-    icon: [
-      { url: "/favicon.png", sizes: "48x48", type: "image/png" },
-      { url: "/favicon-64.png", sizes: "64x64", type: "image/png" },
-      { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
-      { url: "/icon-512.png", sizes: "512x512", type: "image/png" },
-    ],
-    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
-  },
-  manifest: "/site.webmanifest",
-  robots: {
-    index: true,
-    follow: true,
+  other: {
+    "geo.region": `FR-${siteConfig.departmentCode}`,
+    "geo.placename": siteConfig.city,
+    "geo.position": `${siteConfig.geo.latitude};${siteConfig.geo.longitude}`,
+    ICBM: `${siteConfig.geo.latitude}, ${siteConfig.geo.longitude}`,
   },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="fr" className={`${inter.variable} ${manrope.variable}`}>
+    <html lang="fr" className={onest.variable}>
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preload" as="image" href={`/images/gallery/${siteConfig.heroBg}`} />
+        <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=switzer@400,500,600,700&display=swap" />
       </head>
-      <body>{children}</body>
+      <body>
+        <SmoothScroll />
+        {children}
+        <FloatingCallButton />
+      </body>
     </html>
   );
 }

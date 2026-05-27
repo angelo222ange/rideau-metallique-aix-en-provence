@@ -1,64 +1,57 @@
-import { siteConfig } from "@/config/site";
-
-const points = [
-  "Artisan local installe au coeur du Pays d'Aix",
-  "Stock ACM, Somfy, Simu, Sommer dans le vehicule atelier",
-  "Atelier fabrication sur-mesure pour bastides et commerces aixois",
-  "Devis ferme signe sur place, garantie 2 ans pieces / 1 an pose",
-  "Nuancier RAL agree Batiments de France pour le centre Aix",
-];
+import Image from "next/image";
+import Link from "next/link";
+import { aboutSection } from "@/content/site";
+import { ArrowRight } from "../icons";
 
 export default function AboutSection() {
   return (
-    <section className="bg-white py-16 md:py-20 lg:py-[100px] px-5 md:px-10">
-      <div className="max-w-[1280px] mx-auto flex flex-col items-center gap-12 md:gap-16">
-        <div className="w-full flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-10">
-          <div className="shrink-0">
-            <span className="inline-block bg-[#F5F1E6] px-4 py-1.5 rounded-full text-[12px] tracking-[0.2em] uppercase text-[#4F5648]">
-              [ A propos de DRM {siteConfig.city} ]
-            </span>
-          </div>
-          <h2 className="text-[#181C16] max-w-[820px]">
-            Du Cours Mirabeau a la zone des Milles : {siteConfig.experience} ans aupres des commerces, bastides et industriels aixois
-          </h2>
-        </div>
-
-        <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
-          <div className="bg-[#2D3F2A] rounded-[12px] p-6 md:p-8 flex flex-col gap-3 min-h-[260px] justify-between">
-            <div className="flex justify-between items-start">
-              <div
-                className="text-white text-[72px] md:text-[88px] leading-none"
-                style={{ fontWeight: 700, letterSpacing: "-2.4px", fontFamily: "var(--font-manrope)" }}
-              >
-                {siteConfig.delai}<span className="text-[36px] md:text-[44px] align-top">min</span>
-              </div>
-              <div className="w-[60px] h-[60px] rounded-full bg-white/10 flex items-center justify-center">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
-                  <circle cx="12" cy="12" r="9" stroke="white" strokeWidth="1.5" />
-                  <path d="M12 7v5l3 2" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
+    <section className="section bg-[#fbfbfb]">
+      <div className="container">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
+          {/* LEFT: bento with dark quote card + 2 images */}
+          <div className="grid grid-cols-2 gap-4">
+            {/* Dark quote card (top-left) */}
+            <div className="bg-[#050505] text-white rounded-[24px] p-6 flex flex-col justify-between min-h-[230px]">
+              <div className="font-semibold text-[#C28840] text-[22px] flex items-center gap-2">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                  <path d="M12 3l9 8v10h-6v-6h-6v6H3V11l9-8z" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" />
                 </svg>
+                Homey
               </div>
+              <p className="text-[15px] leading-[1.45]">
+                <span className="text-[#C28840]">&ldquo;Solvance</span>{" "}
+                <span className="text-white/85">is helping our business save $10k yearly in our total electricity billing&rdquo;</span>
+              </p>
+              <Link href={aboutSection.testimonial.cta.href} className="btn-pill self-start">
+                {aboutSection.testimonial.cta.label}
+              </Link>
             </div>
-            <p className="text-white/95 text-[15px] md:text-[16px] leading-[1.55]">
-              Delai moyen sur les commerces du centre Aix (Mazarin, Vieil-Aix, Sextius-Mirabeau),
-              le pole d&apos;activites des Milles et la zone Avon a Gardanne. Notre vehicule atelier
-              circule en boucle entre la rocade aixoise et la Sainte-Victoire, ce qui explique
-              les delais courts meme sur les communes excentrees (Trets, Lambesc, Rognes).
-            </p>
+
+            {/* Top-right: man on roof */}
+            <div className="rounded-[24px] overflow-hidden min-h-[230px] relative">
+              <Image src={aboutSection.manImage} alt="Man working on a roof" fill className="object-cover" sizes="(max-width: 1024px) 50vw, 30vw" />
+            </div>
+
+            {/* Bottom: wide solar roof image, full width across columns */}
+            <div className="rounded-[24px] overflow-hidden col-span-2 aspect-[16/9] relative">
+              <Image src={aboutSection.roofImage} alt="Solar roof installation" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" />
+            </div>
           </div>
 
-          <ul className="flex flex-col gap-4 md:gap-5 justify-center">
-            {points.map((p) => (
-              <li key={p} className="flex items-center gap-3 md:gap-4">
-                <span className="shrink-0 w-9 h-9 rounded-full bg-[#C28840]/15 flex items-center justify-center">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                    <path d="M5 12.5l4 4 10-10" stroke="#C28840" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                </span>
-                <span className="text-[#181C16] text-[16px] md:text-[17px] font-medium">{p}</span>
-              </li>
-            ))}
-          </ul>
+          {/* RIGHT: copy + cta */}
+          <div className="flex flex-col gap-6 lg:pt-2">
+            <div className="eyebrow">{aboutSection.eyebrow}</div>
+            <h2>{aboutSection.heading}</h2>
+            <p className="text-[18px] text-[#050505]/60 leading-[1.55] max-w-[520px]">
+              {aboutSection.body}
+            </p>
+            <Link href={aboutSection.cta.href} className="btn-primary self-start mt-6">
+              {aboutSection.cta.label}
+              <span className="btn-arrow-square">
+                <ArrowRight />
+              </span>
+            </Link>
+          </div>
         </div>
       </div>
     </section>

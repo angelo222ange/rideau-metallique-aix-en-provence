@@ -1,79 +1,65 @@
-"use client";
-
-import Link from "next/link";
 import Image from "next/image";
-import { siteConfig } from "@/config/site";
+import Link from "next/link";
+import { hero } from "@/content/site";
+import { ArrowRight } from "../icons";
 
 export default function HeroSection() {
-  const heroAlt = `Depannage rideau metallique ${siteConfig.city} 24h/24 par DRM`;
   return (
-    <section className="relative w-full px-2 md:px-[10px] pt-2 md:pt-[10px]">
-      <div className="relative w-full overflow-hidden rounded-[12px] min-h-[600px] md:min-h-[680px] lg:min-h-[740px]">
-        <img
-          src={`/images/gallery/${siteConfig.heroBg}`}
-          alt={heroAlt}
-          title={heroAlt}
-          width={2400}
-          height={1200}
-          loading="eager"
-          fetchPriority="high"
-          decoding="async"
-          className="absolute inset-0 w-full h-full object-cover"
+    <section className="relative -mt-[88px] pt-[88px] overflow-hidden">
+      {/* Background photo + dark gradient */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src={hero.bg}
+          alt=""
+          fill
+          priority
+          className="object-cover object-center"
+          sizes="100vw"
         />
-        {/* Overlay sombre constant pour neutraliser fonds clairs */}
-        <div className="absolute inset-0 bg-[#1A1F18]/65" aria-hidden />
-        {/* Gradient renforce bas pour bloc texte */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#1A1F18]/50 via-[#1A1F18]/55 to-[#1A1F18]/90" aria-hidden />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/35 to-[#050505]" />
+      </div>
 
-        <div className="relative z-10 flex flex-col items-center justify-center text-center px-5 md:px-10 py-16 md:py-24 min-h-[600px] md:min-h-[680px] lg:min-h-[740px]">
-          {/* Logo officiel DRM Aix-en-Provence */}
-          <div className="mb-6 md:mb-8 bg-white/95 rounded-full p-2 shadow-2xl">
-            <Image
-              src="/images/logos/logo-drm-aix-en-provence.webp"
-              alt={`Logo ${siteConfig.brand}`}
-              title={siteConfig.brand}
-              width={140}
-              height={140}
-              priority
-              style={{ width: "auto", height: "auto", maxWidth: 140, maxHeight: 140, objectFit: "contain" }}
-            />
-          </div>
-          <span className="inline-block bg-[#C28840]/25 border border-[#C28840]/50 backdrop-blur-sm px-4 py-1.5 rounded-full text-[12px] tracking-[0.2em] uppercase text-white mb-5">
-            [ Urgence 24h/24 &mdash; Pays d'Aix ]
-          </span>
-          <h1 className="text-white max-w-[900px] mx-auto" style={{ textShadow: "0 2px 8px rgba(0,0,0,0.5)" }}>
-            Depannage rideau metallique a {siteConfig.city}{" "}et en Pays d&apos;Aix, 24h/24
-          </h1>
-          <p className="text-white text-[17px] md:text-[19px] leading-[1.6] mt-6 max-w-[760px]" style={{ textShadow: "0 1px 6px rgba(0,0,0,0.6)" }}>
-            Artisan local installe au pied de la Sainte-Victoire, {siteConfig.brand} intervient
-            sur rideau bloque, moteur ACM ou Somfy en panne, lame torsionnee par le mistral
-            ou serrure forcee. Sous {siteConfig.delai} min sur Aix centre, Les Milles, Gardanne
-            et tout le Pays d&apos;Aix. Devis ferme signe sur place, garantie 2 ans pieces.
-          </p>
+      <div className="container relative z-10 px-6 sm:px-10 lg:px-12 pt-20 pb-24 lg:pt-24 lg:pb-28 min-h-[88vh] flex flex-col">
+        <div className="eyebrow on-dark mb-6">{hero.eyebrow}</div>
 
-          <div className="flex flex-col sm:flex-row gap-3 mt-10 w-full max-w-[520px]">
+        <h1 className="text-white max-w-[1100px] mb-8">
+          {hero.headlinePre}{" "}
+          <span className="text-[#C28840]">{hero.headlineHighlight}</span>{" "}
+          {hero.headlinePost}
+        </h1>
+
+        <p className="text-white/85 text-[18px] max-w-[640px] mb-10">
+          {hero.body}
+        </p>
+
+        <div className="flex flex-wrap gap-4 mb-12">
+          {hero.ctas.map((cta) => (
             <Link
-              href="/contact/"
-              className="flex-1 inline-flex items-center justify-center h-[52px] px-6 bg-[#C28840] hover:bg-[#A66E2E] text-white text-[15px] font-semibold rounded-[8px] transition-colors"
+              key={cta.label}
+              href={cta.href}
+              className={cta.variant === "primary" ? "btn-primary" : "btn-white"}
             >
-              Demander un devis gratuit
+              {cta.label}
+              <span className="btn-arrow-square">
+                <ArrowRight />
+              </span>
             </Link>
-            <Link
-              href="/zones/"
-              className="flex-1 inline-flex items-center justify-center h-[52px] px-6 bg-white/15 hover:bg-white/25 text-white border border-white/30 text-[15px] font-semibold rounded-[8px] transition-colors backdrop-blur"
-            >
-              Zones d&apos;intervention
-            </Link>
-          </div>
+          ))}
+        </div>
 
-          <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10 mt-12 text-white/80 text-[13px]">
-            <div className="flex items-center gap-2">
-              <span className="text-[#D9A062] font-bold">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-              <span>{siteConfig.rating}/5 &mdash; {siteConfig.ratingCount} avis Google</span>
-            </div>
-            <div>{siteConfig.experience} ans d&apos;experience</div>
-            <div>{siteConfig.interventions} interventions</div>
+        <div className="flex items-center gap-4 mt-auto">
+          <div className="flex -space-x-3">
+            {hero.avatars.map((a, i) => (
+              <span
+                key={a}
+                className="relative w-10 h-10 rounded-full overflow-hidden ring-2 ring-white/30"
+                style={{ zIndex: hero.avatars.length - i }}
+              >
+                <Image src={a} alt="" fill className="object-cover" sizes="40px" />
+              </span>
+            ))}
           </div>
+          <p className="text-white/80 text-[15px]">{hero.proof}</p>
         </div>
       </div>
     </section>

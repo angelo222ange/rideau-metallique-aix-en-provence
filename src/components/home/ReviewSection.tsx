@@ -2,27 +2,39 @@ import { siteConfig } from "@/config/site";
 
 const reviews = [
   {
-    body: `Rideau metallique bloque a la fermeture un samedi soir, le technicien DRM est arrive en 35 minutes a Aix-en-Provence. Diagnostic clair, devis transparent, intervention faite dans la foulee. Tres pro.`,
-    name: "Jean-Marc Etcheverry",
-    location: `${siteConfig.city} centre`,
+    body: `Rideau bloque a la fermeture un vendredi soir, vitrine du Mazarin avec stock visible depuis la rue. Le technicien est arrive en 28 minutes, axe regrais, condensateur change sur place, parti avec la facture signee. Le prix annonce au telephone a ete tenu a l'euro pres.`,
+    name: "Laurent Mouriès",
+    location: `${siteConfig.city} centre (Mazarin)`,
     rating: 5,
   },
   {
-    body: `Installation d'un rideau metallique neuf pour notre bijouterie sur Gardanne, devis sous 24h, pose tres soignee, grille cobra robuste et discrete. Excellent rapport qualite-prix.`,
-    name: "Maite Iturralde",
-    location: "Gardanne",
+    body: `Showroom au pole d'activites des Milles, sectionnel grandes dimensions bloque en milieu d'apres-midi. Equipe sur place en moins d'une heure, un ressort de compensation casse identifie tout de suite, piece en stock dans le vehicule. Reouverture du show le lendemain matin a l'heure.`,
+    name: "Sophie Rambaud",
+    location: "Les Milles (Pioline)",
     rating: 5,
   },
   {
-    body: `Motorisation d'un ancien rideau manuel pour notre commerce a Le Tholonet. Equipe DRM Aix-en-Provence tres a l'ecoute, motorisation Somfy fiable, telecommande programmee impeccablement.`,
-    name: "Pierre Aguerre",
-    location: "Le Tholonet",
+    body: `Restaurant proche de la place des Cardeurs : motorisation d'un ancien rideau manuel passe en Somfy RS100, telecommande programmee pour deux salaries et un planning d'ouverture automatique. Travail soigne, intervention sur deux jours sans gener le service du midi.`,
+    name: "Jean-Philippe Lattes",
+    location: `Vieil-Aix (${siteConfig.city})`,
     rating: 5,
   },
   {
-    body: `Service de qualite pour le depannage du rideau de notre atelier a Les Milles. Lame redressee, axe regraisse, moteur teste. Garantie 2 ans tenue par ecrit. Je recommande sans reserve.`,
-    name: "Catherine Lartigau",
-    location: "Les Milles (13290)",
+    body: `Bijouterie au pied de la cathedrale Saint-Sauveur, grille extensible cobra a renouveler dans une teinte agreee Batiments de France. ${siteConfig.brand} a fourni le nuancier RAL, presente le devis sous 24h et pose en 4h sans casser le rythme des clients. Tres pro.`,
+    name: "Nathalie Esteva",
+    location: "Mazarin",
+    rating: 5,
+  },
+  {
+    body: `Pharmacie de garde a Gardanne, panne moteur tubulaire en pleine nuit. Intervention sous 50 minutes, depannage temporaire pour fermer, retour le lendemain matin pour le remplacement ACM. La piece etait en stock vehicule, pas de delai grossiste.`,
+    name: "Karim Bensaad",
+    location: "Gardanne centre",
+    rating: 5,
+  },
+  {
+    body: `Bastide au Tholonet : remplacement de l'axe d'un ancien rideau aux dimensions hors standard. Atelier ${siteConfig.brand} a fabrique l'axe sur-mesure en 3 jours, pose en demi-journee. Le calcaire avait grippe la coulisse, lubrification complete incluse dans le devis.`,
+    name: "Catherine Bremond",
+    location: "Le Tholonet (route Cezanne)",
     rating: 5,
   },
 ];

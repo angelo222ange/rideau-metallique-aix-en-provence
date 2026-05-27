@@ -5,28 +5,36 @@ import { siteConfig } from "@/config/site";
 
 const faqs = [
   {
-    q: `Quel delai pour un depannage de rideau metallique a ${siteConfig.city} ?`,
-    a: `DRM ${siteConfig.city} engage un delai d'intervention sous ${siteConfig.delai} minutes en horaires ouvrables sur tout le secteur de Aix-en-Provence, Les Milles, Gardanne et le Pays d'Aix. En urgence nuit / week-end / jour ferie, le delai est sous 1 heure. Notre vehicule atelier est toujours en stock de pieces detachees.`,
+    q: `Qui appeler pour un depannage de rideau metallique a ${siteConfig.city} 24h/24 ?`,
+    a: `${siteConfig.brand} est l'interlocuteur direct pour toute urgence rideau metallique a ${siteConfig.city}. Notre artisan local intervient sur tout le Pays d'Aix : centre historique (Mazarin, Vieil-Aix, Sextius-Mirabeau), Les Milles, Luynes, Le Tholonet, Puyricard et les villages voisins, sous ${siteConfig.delai} minutes en horaires ouvrables et sous 1 heure la nuit, dimanche et jours feries. Devis ferme avant l'intervention, deplacement inclus, pieces detachees ACM/Somfy/Simu en stock dans le vehicule atelier.`,
   },
   {
-    q: `DRM ${siteConfig.city} intervient-il pour les rideaux metalliques de commerces ?`,
-    a: `Oui, les commerces (boulangeries, bijouteries, restaurants, magasins, bars-tabacs) sont notre coeur de metier. Nous intervenons sur lames pleines P57 et P90, grilles cobra, grilles extensibles, lames micro-perforees et polycarbonates. Notre stock couvre les principales marques (Somfy, Simu, ACM, Came, Nice, BFT, Sommer).`,
+    q: "Quels types de rideaux metalliques sont les plus courants a Aix-en-Provence ?",
+    a: "Le tissu commercant aixois est tres heterogene. Sur le Cours Mirabeau et le Mazarin, les vitrines de boutiques de luxe et d'antiquaires sont equipees de lames micro-perforees ou de grilles extensibles (autorisent un retro-eclairage rideau ferme exige par la municipalite). Les commerces des Milles et de la Pioline, plus recents, ont des tabliers acier ou aluminium thermolaque pleins (P57 et P90). Les hangars industriels de Gardanne et Meyreuil (heritage du bassin minier) sont equipes de sectionnels grandes dimensions, souvent moteurs Sommer GIGAroll lateraux.",
   },
   {
-    q: `Quel est le prix d'un depannage rideau metallique a ${siteConfig.city} ?`,
-    a: `Les tarifs DRM ${siteConfig.city} sont annonces avant intervention. A titre indicatif : deblocage simple a partir de 149 euros, reparation moteur a partir de 390 euros, remplacement de lames a partir de 189 euros, motorisation complete a partir de 500 euros. Devis gratuit sur place, sans engagement.`,
+    q: `Prix d'un depannage de rideau metallique a ${siteConfig.city} : a quoi s'attendre ?`,
+    a: `${siteConfig.brand} pratique des tarifs annonces avant l'intervention et calcules ligne par ligne. Pour donner des ordres de grandeur : un deblocage simple sur un commerce du centre Aix part a partir de 149 euros, un changement de condensateur moteur a partir de 89 euros, un remplacement de moteur tubulaire ACM ou Somfy a partir de 390 euros, le remplacement de lames pleines (1 a 3 lames) a partir de 189 euros, une motorisation complete d'un ancien rideau manuel a partir de 500 euros. La majoration urgence nuit/week-end est annoncee a la prise d'appel.`,
   },
   {
-    q: `Quelles marques de moteurs DRM ${siteConfig.city} maitrise-t-elle ?`,
-    a: `Toutes les principales marques du marche : Somfy (RS100, tubulaires), Simu (T5), ACM (Titan, RAPTOR 76, Centris XXL), Nice (Era), Came, BFT, Sommer (GIGAroll lateral), Masinara, Gaposa. Pieces detachees d'origine en stock, garantie constructeur preservee.`,
+    q: "Quelles marques de moteurs et pieces stocke votre vehicule atelier ?",
+    a: "Sur l'agglomeration aixoise, le parc rideau metallique melange ancien (annees 90) et neuf. Notre stock embarque : moteurs tubulaires Somfy RS100 et Simu T5, moteurs centraux ACM Titan / RAPTOR 76 / Centris XXL, motorisations Came AXO et BFT Argo, automatismes Nice Era, moteurs lateraux Sommer GIGAroll (frequents sur les hangars de la zone Avon a Gardanne), pieces Masinara et Gaposa pour les rideaux haut-de-gamme. Toutes les pieces sont d'origine constructeur : la garantie initiale du tablier est preservee.",
   },
   {
-    q: `Quelle garantie DRM ${siteConfig.city} apporte-t-elle sur ses interventions ?`,
-    a: `Toutes nos interventions sont garanties 2 ans sur les pieces neuves et 1 an sur la main-d'oeuvre. La garantie est mentionnee au devis et a la facture. En cas de defaillance dans la periode, DRM ${siteConfig.city} reintervient gratuitement, sans franchise et sans deplacement.`,
+    q: `Quelle garantie ${siteConfig.brand} apporte-t-il sur ses interventions ?`,
+    a: `Toutes nos interventions sur le Pays d'Aix sont couvertes par une garantie 2 ans sur les pieces neuves et 1 an sur la main-d'oeuvre, mentionnee au devis et a la facture. En cas de defaillance dans la periode, ${siteConfig.brand} reintervient gratuitement, sans franchise et sans deplacement supplementaire. Sur les contrats d'entretien annuels (commerces du centre Aix soumis a fermeture nocturne quotidienne, commerces des Milles avec usage intensif), la garantie est tacitement renouvelee a chaque visite preventive.`,
   },
   {
-    q: `DRM ${siteConfig.city} fabrique-t-il ses propres rideaux metalliques ?`,
-    a: `Oui, notre atelier de fabrication situe en Pays d'Aix produit des rideaux metalliques sur-mesure (acier galvanise, aluminium thermolaque, inox brosse) en moins de 5 jours ouvres pour un commerce standard et sous 4 heures pour une lame ou un axe de remplacement urgent.`,
+    q: "Le mistral peut-il abimer mon rideau metallique ?",
+    a: "Oui, le mistral qui descend des Alpilles et de la chaine de l'Etoile vers la plaine aixoise impose des contraintes specifiques. Sur les longues lames (> 3,50 m) exposees plein nord-ouest, les rafales repetees torsionnent les lames pleines et descellent progressivement les coulisses si elles ne sont pas montees en double scellement chimique. ${siteConfig.brand} verifie systematiquement ce point lors de la visite annuelle d'entretien : serrage des fixations, etat des butees, lubrification renforcee des axes pour absorber les vibrations.",
+  },
+  {
+    q: `${siteConfig.brand} fabrique-t-il des rideaux metalliques sur-mesure pour les bastides aixoises ?`,
+    a: "Oui. Les bastides du Tholonet, de Vauvenargues ou de Puyricard ont souvent des ouvertures non standard (linteaux cintres, largeurs > 4 m, hauteurs reduites sous voutes) qui rendent impossible la pose d'un tablier catalogue. Notre atelier produit des lames acier galvanise, aluminium thermolaque ou inox brosse aux dimensions exactes, ainsi que des axes et coulisses sur-mesure. Delai standard 5 jours ouvres, ramene a 4 heures sur urgence pour le remplacement d'une seule lame ou d'un axe.",
+  },
+  {
+    q: "Le centre historique d'Aix impose-t-il des contraintes esthetiques ?",
+    a: "Sur le perimetre des Batiments de France (secteur sauvegarde du Mazarin et Vieil-Aix), les facades classees exigent des tabliers discrets, generalement en teintes neutres mates (gris fer, beige sable, vert olive sourdine) coordonnees avec le calcaire d'Aix. ${siteConfig.brand} dispose d'un nuancier RAL agree par l'Architecte des Batiments de France et propose des lames micro-perforees qui preservent la vitrine eclairee la nuit (cas frequent pour les bijouteries et antiquaires de la rue d'Italie).",
   },
 ];
 

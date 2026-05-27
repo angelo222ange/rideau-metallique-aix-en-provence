@@ -19,20 +19,23 @@ export default function HeroSection() {
           decoding="async"
           className="absolute inset-0 w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/60" aria-hidden />
-        <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-[#1A1F18]/85 via-[#1A1F18]/40 to-transparent" aria-hidden />
+        {/* Overlay sombre constant pour neutraliser fonds clairs */}
+        <div className="absolute inset-0 bg-[#1A1F18]/55" aria-hidden />
+        {/* Gradient renforce centre+bas pour bloc texte */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#1A1F18]/60 via-[#1A1F18]/50 to-[#1A1F18]/85" aria-hidden />
 
         <div className="relative z-10 flex flex-col items-center justify-center text-center px-5 md:px-10 py-16 md:py-24 min-h-[560px] md:min-h-[640px] lg:min-h-[700px]">
           <span className="inline-block bg-[#C28840]/20 border border-[#C28840]/40 backdrop-blur-sm px-4 py-1.5 rounded-full text-[12px] tracking-[0.2em] uppercase text-white mb-6">
             [ Urgence 24h/24 &mdash; Pays d'Aix ]
           </span>
           <h1 className="text-white max-w-[900px] mx-auto" style={{ textShadow: "0 2px 8px rgba(0,0,0,0.5)" }}>
-            Depannage rideau metallique a {siteConfig.city}
+            Depannage rideau metallique a {siteConfig.city} et en Pays d&apos;Aix, 24h/24
           </h1>
-          <p className="text-white/90 text-[17px] md:text-[19px] leading-[1.6] mt-6 max-w-[720px]">
-            DRM {siteConfig.city} intervient sur rideau metallique bloque, moteur en panne, lame deformee ou serrure cassee.
-            Intervention sous {siteConfig.delai} minutes a {siteConfig.city} et sur tout le Pays d'Aix,
-            7j/7 weekends et jours feries inclus. Devis gratuit, garantie 2 ans.
+          <p className="text-white text-[17px] md:text-[19px] leading-[1.6] mt-6 max-w-[760px]" style={{ textShadow: "0 1px 6px rgba(0,0,0,0.6)" }}>
+            Artisan local installe au pied de la Sainte-Victoire, {siteConfig.brand} intervient
+            sur rideau bloque, moteur ACM ou Somfy en panne, lame torsionnee par le mistral
+            ou serrure forcee. Sous {siteConfig.delai} min sur Aix centre, Les Milles, Gardanne
+            et tout le Pays d&apos;Aix. Devis ferme signe sur place, garantie 2 ans pieces.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-3 mt-10 w-full max-w-[520px]">

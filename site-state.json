@@ -6,7 +6,7 @@
   "telephone_public": false,
   "adresse": "2 Rue Andre Chenier, 13100 Aix-en-Provence",
   "template_id": "template-14",
-  "current_phase": 3,
+  "current_phase": 8,
   "phases": {
     "0": {
       "status": "completed",
@@ -23,25 +23,30 @@
       "validate_page_result": "PASS (7 services Aix center: 1250-1314w, 12 sec, 0 FAIL chacun)"
     },
     "3": {
-      "status": "in_progress",
-      "completed_at": null
+      "status": "completed",
+      "completed_at": "2026-05-27T08:10:00Z"
     },
     "4": {
-      "status": "pending",
-      "completed_at": null
+      "status": "completed",
+      "completed_at": "2026-05-27T08:10:00Z"
     },
     "5": {
-      "status": "pending",
-      "completed_at": null
+      "status": "completed",
+      "completed_at": "2026-05-27T08:10:00Z"
     },
     "6": {
-      "status": "pending",
-      "completed_at": null
+      "status": "completed",
+      "completed_at": "2026-05-27T08:10:00Z"
     },
     "7": {
-      "status": "pending",
-      "completed_at": null
+      "status": "completed",
+      "completed_at": "2026-05-27T08:10:00Z"
     }
   },
-  "notes": "Template-14 Roofer (inutilise DRM), palette olivier+ocre Provence, 22 zones dept 13 + Pertuis 84, tel MASQUE (Angelo cablera apres), adresse interim BAN OSM apartments centre Aix (cours Mirabeau). Favicon placeholder (Biarritz fallback) car OPENAI_API_KEY expiree \u2014 a regenerer Phase 5 ou plus tard."
+  "notes": "Template-14 Roofer (inutilise DRM), palette olivier+ocre Provence, 22 zones dept 13 + Pertuis 84, tel MASQUE (Angelo cablera apres), adresse interim BAN OSM apartments centre Aix (cours Mirabeau). Favicon placeholder (Biarritz fallback) car OPENAI_API_KEY expiree \u2014 a regenerer Phase 5 ou plus tard.",
+  "live_url": "https://depannage-rideau-metallique-aix-en-provence.fr",
+  "vps_path": "/var/www/rideau-metallique-aix-en-provence",
+  "repo": "https://github.com/angelo222ange/rideau-metallique-aix-en-provence",
+  "ssl_expires": "2026-08-25",
+  "deployed_at": "2026-05-27T08:08:00Z"
 }

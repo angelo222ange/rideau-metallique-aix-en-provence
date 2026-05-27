@@ -1,10 +1,11 @@
 import { siteConfig } from "@/config/site";
 
 const points = [
-  "Techniciens specialistes du rideau metallique",
-  "Pieces detachees d'origine en stock",
-  "Atelier de fabrication en Pays d'Aix",
-  "Devis gratuit, garantie 2 ans pieces / 1 an pose",
+  "Artisan local installe au coeur du Pays d'Aix",
+  "Stock ACM, Somfy, Simu, Sommer dans le vehicule atelier",
+  "Atelier fabrication sur-mesure pour bastides et commerces aixois",
+  "Devis ferme signe sur place, garantie 2 ans pieces / 1 an pose",
+  "Nuancier RAL agree Batiments de France pour le centre Aix",
 ];
 
 export default function AboutSection() {
@@ -18,7 +19,7 @@ export default function AboutSection() {
             </span>
           </div>
           <h2 className="text-[#181C16] max-w-[820px]">
-            {siteConfig.experience} ans au service des commerces, ateliers et industriels du Pays Aixois pour leurs rideaux metalliques
+            Du Cours Mirabeau a la zone des Milles : {siteConfig.experience} ans aupres des commerces, bastides et industriels aixois
           </h2>
         </div>
 
@@ -39,8 +40,10 @@ export default function AboutSection() {
               </div>
             </div>
             <p className="text-white/95 text-[15px] md:text-[16px] leading-[1.55]">
-              Delai d&apos;intervention moyen sur {siteConfig.city} et l&apos;agglomeration aixoise (Aix-en-Provence-Les-Milles-Gardanne).
-              Vehicule atelier toujours en stock de pieces detachees pour les marques Somfy, Simu, ACM, Came, Nice, BFT et Sommer.
+              Delai moyen sur les commerces du centre Aix (Mazarin, Vieil-Aix, Sextius-Mirabeau),
+              le pole d&apos;activites des Milles et la zone Avon a Gardanne. Notre vehicule atelier
+              circule en boucle entre la rocade aixoise et la Sainte-Victoire, ce qui explique
+              les delais courts meme sur les communes excentrees (Trets, Lambesc, Rognes).
             </p>
           </div>
 

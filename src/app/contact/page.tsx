@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import FloatingCallButton from "@/components/FloatingCallButton";
+import PageHeader from "@/components/PageHeader";
 import ContactForm from "@/components/ContactForm";
+import CtaSection from "@/components/home/CtaSection";
 import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
-  title: `Contact - Depannage rideau metallique ${siteConfig.city}`,
-  description: `Demandez votre devis gratuit a DRM ${siteConfig.city} : depannage, installation, motorisation et fabrication de rideaux metalliques en Pays d'Aix. Reponse en moins de 24h.`,
+  title: `Contact - Devis gratuit ${siteConfig.brand}`,
+  description: `Demandez votre devis gratuit a ${siteConfig.brand} : depannage, installation, motorisation et fabrication de rideaux metalliques en Pays d'Aix. Reponse en moins de 24h.`,
   alternates: { canonical: siteConfig.url + "/contact/" },
 };
 
@@ -26,91 +27,54 @@ export default function ContactPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <Header />
       <main>
-        <section className="bg-[#1A1F18] text-white pt-16 pb-12 md:pt-24 md:pb-16 px-5 md:px-10">
-          <div className="max-w-[1280px] mx-auto">
-            <nav className="text-[13px] text-white/70 mb-4">
-              <a href="/" className="hover:text-white">Accueil</a>
-              <span className="mx-2">/</span>
-              <span className="text-white">Contact</span>
-            </nav>
-            <h1 className="text-white max-w-[820px]">Contact DRM {siteConfig.city}</h1>
-            <p className="text-white/80 text-[17px] md:text-[18px] mt-5 max-w-[720px]">
-              Demandez votre devis gratuit en moins de 24h. Notre equipe DRM {siteConfig.city} repond sous 1 heure en horaires ouvrables, 24h/24 en urgence.
-            </p>
-          </div>
-        </section>
+        <PageHeader
+          eyebrow="[ CONTACT — DEVIS EN 24H ]"
+          headlinePre="Demandez votre"
+          headlineHighlight="devis gratuit"
+          headlinePost={`a ${siteConfig.brand}`}
+          body={`${siteConfig.brand} repond a chaque demande en moins de 24h. Devis ferme signe sur place avant intervention, garantie 2 ans pieces. Couverture complete : Aix centre, Les Milles, Gardanne, Le Tholonet, Puyricard et tout le Pays d'Aix.`}
+          ctas={[]}
+          bgImage="/images/gallery/depannage-rideau-metallique-drm-services.webp"
+          bgAlt="Contact DRM Aix-en-Provence"
+          breadcrumb={[{ label: "Accueil", href: "/" }, { label: "Contact" }]}
+        />
 
-        <section className="bg-white py-16 md:py-20 px-5 md:px-10">
-          <div className="max-w-[1280px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
-            <div>
-              <span className="inline-block bg-[#F5F1E6] px-[14px] py-1.5 rounded-full text-[12px] tracking-[0.2em] uppercase text-[#4F5648] mb-4">
-                [ Devis gratuit ]
-              </span>
-              <h2 className="text-[#181C16] mb-4">Decrivez votre besoin rideau metallique</h2>
-              <p className="text-[#4F5648] text-[16px] leading-relaxed mb-6">
-                Un rideau metallique bloque, une motorisation a installer, un atelier a equiper en
-                rideau industriel ? Remplissez le formulaire ci-dessous, notre equipe DRM {siteConfig.city} vous
-                rappelle pour etablir un pre-diagnostic et programmer une intervention.
-              </p>
-              <ContactForm />
+        <section className="section bg-white">
+          <div className="container">
+            <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-20">
+              <div>
+                <div className="eyebrow mb-6">[ FORMULAIRE ]</div>
+                <h2 className="mb-4">Decrivez votre besoin</h2>
+                <p className="text-[16px] text-[#050505]/65 mb-8 leading-[1.55]">
+                  Type de fermeture, marque du moteur, urgence ou non, photos si possible. Plus vous nous donnez de details, plus notre devis est precis et rapide.
+                </p>
+                <ContactForm />
+              </div>
+
+              <div className="flex flex-col gap-6">
+                <div className="bg-[#fbfbfb] rounded-[20px] p-6 lg:p-8">
+                  <h3 className="h2-sm mb-4">Adresse de l&apos;atelier</h3>
+                  <p className="text-[15px] text-[#050505]/70 leading-[1.55]">{siteConfig.address}</p>
+                  <p className="text-[14px] text-[#050505]/55 mt-3">Couvre Aix centre, Mazarin, Vieil-Aix, Sextius-Mirabeau, Les Milles, Gardanne, Le Tholonet, Puyricard, et tout le Pays d&apos;Aix.</p>
+                </div>
+                <div className="bg-[#fbfbfb] rounded-[20px] p-6 lg:p-8">
+                  <h3 className="h2-sm mb-4">Email</h3>
+                  <a href={`mailto:${siteConfig.email}`} className="text-[15px] text-[#C28840] font-semibold hover:underline break-all">{siteConfig.email}</a>
+                  <p className="text-[14px] text-[#050505]/55 mt-3">Reponse sous 24h en jours ouvres.</p>
+                </div>
+                <div className="bg-[#050505] text-white rounded-[20px] p-6 lg:p-8">
+                  <h3 className="h2-sm text-white mb-4">Horaires</h3>
+                  <p className="text-[15px] text-white/75 leading-[1.55]">{siteConfig.openingHours}</p>
+                  <p className="text-[14px] text-white/55 mt-3">Intervention sous {siteConfig.delai} min en horaires ouvrables. Sous 1h pour les urgences nuit/weekend/jour ferie.</p>
+                </div>
+              </div>
             </div>
-
-            <aside className="bg-[#F5F1E6] rounded-[12px] p-6 md:p-10 flex flex-col gap-6 lg:sticky lg:top-24">
-              <h3 className="text-[#181C16] text-[22px] md:text-[26px] font-semibold">
-                Contact direct
-              </h3>
-              <ul className="flex flex-col gap-5">
-                {siteConfig.phonePublic && siteConfig.phone && (
-                  <li className="flex items-start gap-4">
-                    <span className="w-10 h-10 rounded-full bg-white text-[#C28840] inline-flex items-center justify-center shrink-0">
-                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92Z" stroke="currentColor" strokeWidth="1.5" /></svg>
-                    </span>
-                    <div className="flex flex-col">
-                      <span className="text-[#4F5648] text-[13px] uppercase tracking-[0.15em]">Telephone</span>
-                      <a href={siteConfig.phoneLink} className="text-[#181C16] text-[17px] font-semibold hover:text-[#C28840]">
-                        {siteConfig.phone}
-                      </a>
-                    </div>
-                  </li>
-                )}
-                <li className="flex items-start gap-4">
-                  <span className="w-10 h-10 rounded-full bg-white text-[#C28840] inline-flex items-center justify-center shrink-0">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" strokeWidth="1.5" /><path d="m3 7 9 6 9-6" stroke="currentColor" strokeWidth="1.5" /></svg>
-                  </span>
-                  <div className="flex flex-col">
-                    <span className="text-[#4F5648] text-[13px] uppercase tracking-[0.15em]">Email</span>
-                    <a href={`mailto:${siteConfig.email}`} className="text-[#181C16] text-[16px] font-semibold hover:text-[#C28840]">
-                      {siteConfig.email}
-                    </a>
-                  </div>
-                </li>
-                <li className="flex items-start gap-4">
-                  <span className="w-10 h-10 rounded-full bg-white text-[#C28840] inline-flex items-center justify-center shrink-0">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 22s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12Z" stroke="currentColor" strokeWidth="1.5" /><circle cx="12" cy="10" r="2.5" stroke="currentColor" strokeWidth="1.5" /></svg>
-                  </span>
-                  <div className="flex flex-col">
-                    <span className="text-[#4F5648] text-[13px] uppercase tracking-[0.15em]">Zone</span>
-                    <span className="text-[#181C16] text-[16px] font-semibold">
-                      {siteConfig.city} ({siteConfig.postalCode}) + Pays d'Aix
-                    </span>
-                  </div>
-                </li>
-                <li className="flex items-start gap-4">
-                  <span className="w-10 h-10 rounded-full bg-white text-[#C28840] inline-flex items-center justify-center shrink-0">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="1.5" /><path d="M12 7v5l3 2" stroke="currentColor" strokeWidth="1.5" /></svg>
-                  </span>
-                  <div className="flex flex-col">
-                    <span className="text-[#4F5648] text-[13px] uppercase tracking-[0.15em]">Horaires</span>
-                    <span className="text-[#181C16] text-[16px] font-semibold">{siteConfig.openingHours}</span>
-                  </div>
-                </li>
-              </ul>
-            </aside>
           </div>
         </section>
+
+        <CtaSection />
       </main>
       <Footer />
-      <FloatingCallButton />
     </>
   );
 }

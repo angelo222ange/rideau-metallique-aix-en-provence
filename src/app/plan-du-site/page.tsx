@@ -2,14 +2,14 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import FloatingCallButton from "@/components/FloatingCallButton";
+import PageHeader from "@/components/PageHeader";
 import { siteConfig, services, zones } from "@/config/site";
 
-const citySlug = siteConfig.city.toLowerCase().replace(/[\s']/g, "-");
+const citySlug = siteConfig.cityShort.toLowerCase().replace(/\s+/g, "-");
 
 export const metadata: Metadata = {
-  title: `Plan du site - DRM ${siteConfig.city}`,
-  description: `Plan du site DRM ${siteConfig.city} : toutes les pages, services et zones d'intervention rideau metallique en Pays d'Aix.`,
+  title: `Plan du site - ${siteConfig.brand}`,
+  description: `Plan du site ${siteConfig.brand} : toutes les pages, 7 services et ${zones.length + 1} zones d'intervention rideau metallique en Pays d'Aix.`,
   alternates: { canonical: siteConfig.url + "/plan-du-site/" },
 };
 
@@ -18,44 +18,49 @@ export default function PlanDuSitePage() {
     <>
       <Header />
       <main>
-        <section className="bg-[#1A1F18] text-white pt-14 pb-10 md:pt-20 md:pb-14 px-5 md:px-10">
-          <div className="max-w-[1280px] mx-auto">
-            <h1 className="text-white">Plan du site</h1>
-            <p className="text-white/80 mt-3">Toutes les pages de DRM {siteConfig.city}</p>
-          </div>
-        </section>
-        <section className="bg-white py-12 md:py-16 px-5 md:px-10">
-          <div className="max-w-[1280px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+        <PageHeader
+          eyebrow="[ PLAN DU SITE ]"
+          headlinePre="Toutes les"
+          headlineHighlight="pages du site"
+          headlinePost={`${siteConfig.brand}`}
+          body={`${1 + services.length + zones.length * services.length + 7} URLs accessibles : homepage, 7 services principaux, ${zones.length} zones d'intervention x 7 services, blog, contact, legales.`}
+          ctas={[]}
+          bgImage="/images/gallery/realisation-rideau-metallique-lame-pleine-commerce.webp"
+          bgAlt="Plan du site DRM Aix-en-Provence"
+          breadcrumb={[{ label: "Accueil", href: "/" }, { label: "Plan du site" }]}
+        />
+        <section className="section bg-white">
+          <div className="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-14">
             <div>
-              <h2 className="text-[#181C16] text-[20px] font-semibold mb-4">Pages principales</h2>
-              <ul className="flex flex-col gap-2 text-[15px]">
-                <li><Link href="/" className="text-[#2D3F2A] hover:text-[#C28840]">Accueil</Link></li>
-                <li><Link href="/zones/" className="text-[#2D3F2A] hover:text-[#C28840]">Zones d&apos;intervention</Link></li>
-                <li><Link href="/blog/" className="text-[#2D3F2A] hover:text-[#C28840]">Blog</Link></li>
-                <li><Link href="/contact/" className="text-[#2D3F2A] hover:text-[#C28840]">Contact</Link></li>
-                <li><Link href="/mentions-legales/" className="text-[#2D3F2A] hover:text-[#C28840]">Mentions legales</Link></li>
-                <li><Link href="/confidentialite/" className="text-[#2D3F2A] hover:text-[#C28840]">Confidentialite</Link></li>
+              <div className="eyebrow mb-5">[ Pages principales ]</div>
+              <ul className="flex flex-col gap-3 text-[15px]">
+                <li><Link href="/" className="text-[#050505] hover:text-[#C28840] font-medium">Accueil</Link></li>
+                <li><Link href="/zones/" className="text-[#050505] hover:text-[#C28840] font-medium">Zones d&apos;intervention</Link></li>
+                <li><Link href="/blog/" className="text-[#050505] hover:text-[#C28840] font-medium">Blog rideau metallique</Link></li>
+                <li><Link href="/contact/" className="text-[#050505] hover:text-[#C28840] font-medium">Contact</Link></li>
+                <li><Link href="/mentions-legales/" className="text-[#050505]/70 hover:text-[#C28840]">Mentions legales</Link></li>
+                <li><Link href="/confidentialite/" className="text-[#050505]/70 hover:text-[#C28840]">Politique de confidentialite</Link></li>
               </ul>
             </div>
             <div>
-              <h2 className="text-[#181C16] text-[20px] font-semibold mb-4">Nos services</h2>
-              <ul className="flex flex-col gap-2 text-[15px]">
+              <div className="eyebrow mb-5">[ 7 services {siteConfig.city} ]</div>
+              <ul className="flex flex-col gap-3 text-[15px]">
                 {services.map((s) => (
                   <li key={s.id}>
-                    <Link href={`/${s.slug}-${citySlug}/`} className="text-[#2D3F2A] hover:text-[#C28840]">
-                      {s.name} rideau metallique
+                    <Link href={`/${s.slug}-${citySlug}/`} className="text-[#050505] hover:text-[#C28840] font-medium">
+                      {s.name} rideau metallique a {siteConfig.cityShort}
                     </Link>
                   </li>
                 ))}
               </ul>
             </div>
             <div>
-              <h2 className="text-[#181C16] text-[20px] font-semibold mb-4">Zones desservies</h2>
-              <ul className="flex flex-col gap-2 text-[15px]">
+              <div className="eyebrow mb-5">[ {zones.length} zones du Pays d&apos;Aix ]</div>
+              <ul className="flex flex-col gap-3 text-[15px]">
                 {zones.map((z) => (
                   <li key={z.slug}>
-                    <Link href={`/depannage-rideau-metallique-${z.slug}/`} className="text-[#2D3F2A] hover:text-[#C28840]">
-                      {z.name} ({z.postalCode})
+                    <Link href={`/depannage-rideau-metallique-${z.slug}/`} className="text-[#050505] hover:text-[#C28840] font-medium">
+                      {z.name} <span className="text-[#050505]/45 font-mono text-[13px]">({z.postalCode})</span>
                     </Link>
                   </li>
                 ))}
@@ -65,7 +70,6 @@ export default function PlanDuSitePage() {
         </section>
       </main>
       <Footer />
-      <FloatingCallButton />
     </>
   );
 }

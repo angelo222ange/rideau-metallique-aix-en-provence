@@ -15,15 +15,14 @@ export default function WhatWePowerSection() {
           </p>
         </div>
 
-        {/* Showcase video */}
+        {/* Showcase image (large contextuelle intervention/installation) */}
         <div className="relative rounded-[24px] overflow-hidden aspect-[16/8] mb-16 bg-[#0e2419]">
-          <video
-            src={whatWePower.video}
-            poster={whatWePower.videoPoster}
-            autoPlay
-            loop
-            muted
-            playsInline
+          <img
+            src={whatWePower.videoPoster}
+            alt={whatWePower.heading}
+            title={whatWePower.heading}
+            loading="lazy"
+            decoding="async"
             className="absolute inset-0 w-full h-full object-cover"
           />
         </div>

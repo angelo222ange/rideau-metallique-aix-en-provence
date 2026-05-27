@@ -1,10 +1,14 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import FloatingCallButton from "@/components/FloatingCallButton";
-import ServiceZoneSpecific from "@/components/service-sections/ServiceZoneSpecific";
+import PageHeader from "@/components/PageHeader";
+import ServiceFeatures from "@/components/service/ServiceFeatures";
+import ServiceProcess from "@/components/service/ServiceProcess";
+import ServiceZoneLocal from "@/components/service/ServiceZoneLocal";
+import ServiceLinks from "@/components/service/ServiceLinks";
+import ServiceFaq from "@/components/service/ServiceFaq";
+import CtaSection from "@/components/home/CtaSection";
 import { siteConfig, services, zones } from "@/config/site";
 import { parseSlug } from "@/lib/content";
 import { buildServiceZoneContent, getServiceWording } from "@/lib/service-content";
@@ -47,14 +51,37 @@ export async function generateMetadata({ params }: { params: Promise<{ service_z
   };
 }
 
+// Bg hero contextuel par service
 const serviceHeroImages: Record<string, string> = {
-  depannage: "/images/gallery/hero-bg-technicien-drm.webp",
-  installation: "/images/gallery/installation-rideau-metallique-drm.webp",
-  reparation: "/images/gallery/depannage-rideau-metallique-drm-services.webp",
+  depannage: "/images/gallery/depannage-rideau-metallique-drm-reparation.webp",
+  installation: "/images/gallery/installation-rideau-metallique-anti-effraction.webp",
+  reparation: "/images/gallery/realisation-rideau-metallique-lame-pleine.webp",
   motorisation: "/images/gallery/moteur-tubulaire-rideau-metallique-drm.webp",
-  deblocage: "/images/gallery/rideau-metallique-bloque-depannage-rideau-metallique.webp",
-  entretien: "/images/gallery/entretien-rideau-metallique-drm-france.webp",
+  deblocage: "/images/gallery/depannage-rideau-metallique-drm.webp",
+  entretien: "/images/gallery/pose-axe-rideau-metallique-drm.webp",
   fabrication: "/images/gallery/fabrication-rideau-metallique-entreprise-drm.webp",
+};
+
+// Image showcase pour la section ServiceFeatures (16:8)
+const serviceShowcaseImages: Record<string, string> = {
+  depannage: "/images/gallery/depannage-rideau-metallique-drm-services.webp",
+  installation: "/images/gallery/installation-rideau-metallique-drm.webp",
+  reparation: "/images/gallery/realisation-rideau-metallique-lame-pleine-commerce.webp",
+  motorisation: "/images/gallery/kit-moteur-complet-acm-rideau-metallique.webp",
+  deblocage: "/images/gallery/depannage-rideau-metallique-drm.webp",
+  entretien: "/images/gallery/entretien-rideau-metallique-drm-france.webp",
+  fabrication: "/images/gallery/fabrication-axe-rideau-metallique-france.webp",
+};
+
+// Image process (côté gauche sticky, 4/3)
+const serviceProcessImages: Record<string, string> = {
+  depannage: "/images/gallery/depannage-rideau-metallique-drm.webp",
+  installation: "/images/gallery/pose-coulisse-tablier-rideau-metallique.webp",
+  reparation: "/images/gallery/pose-axe-rideau-metallique-drm.webp",
+  motorisation: "/images/gallery/moteur-acm-76-rideau-metallique.webp",
+  deblocage: "/images/gallery/depannage-rideau-metallique-drm-reparation.webp",
+  entretien: "/images/gallery/pose-axe-rideau-metallique-drm.webp",
+  fabrication: "/images/gallery/fabrication-axe-rideau-metallique-locale.webp",
 };
 
 export default async function ServiceZonePage({ params }: { params: Promise<{ service_zone: string }> }) {
@@ -69,11 +96,11 @@ export default async function ServiceZonePage({ params }: { params: Promise<{ se
   const content = buildServiceZoneContent(service.id, zoneName, zoneSlug, zonePostal);
   const local = getZoneLocal(zoneSlug);
   const word = getServiceWording(service.id);
-  const heroImg = serviceHeroImages[service.id] ?? "/images/gallery/depannage-rideau-metallique-drm-reparation.webp";
+  const heroImg = serviceHeroImages[service.id];
+  const showcaseImg = serviceShowcaseImages[service.id];
+  const processImg = serviceProcessImages[service.id];
 
-  const otherServices = services.filter((s) => s.id !== service.id);
-  const neighborZones = zones.filter((z) => z.slug !== zoneSlug).slice(0, 8);
-
+  // Schemas JSON-LD
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -83,239 +110,125 @@ export default async function ServiceZonePage({ params }: { params: Promise<{ se
       { "@type": "ListItem", position: 3, name: zoneName, item: `${siteConfig.url}/${service_zone}/` },
     ],
   };
-
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
-    serviceType: `${service.name} de rideau metallique`,
+    serviceType: word.keyword,
     name: `${service.name} rideau metallique ${zoneName}`,
-    description: content.introText,
+    description: content.introText.slice(0, 200),
     provider: { "@type": "LocalBusiness", name: siteConfig.fullName, url: siteConfig.url },
     areaServed: { "@type": "City", name: zoneName, address: { "@type": "PostalAddress", postalCode: zonePostal } },
-    offers: { "@type": "Offer", priceCurrency: "EUR", availability: "https://schema.org/InStock" },
   };
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: content.faq.map((f) => ({
+      "@type": "Question",
+      name: f.question,
+      acceptedAnswer: { "@type": "Answer", text: f.answer },
+    })),
+  };
+
+  // 3 features adaptées au service
+  const features = [
+    {
+      title: `Diagnostic ${word.keyword} en 15 minutes`,
+      body: `Inspection complete : ${word.gestes.slice(0, 3).join(", ")}. Devis ferme signe sur place avant toute intervention.`,
+    },
+    {
+      title: "Pieces d'origine en stock",
+      body: "Vehicule atelier rempli des pieces ACM Titan, Somfy RS100, Simu T5, Sommer GIGAroll. 90% des interventions bouclees en une visite.",
+    },
+    {
+      title: "Garantie 2 ans pieces",
+      body: "Garantie 2 ans pieces neuves + 1 an main-d'oeuvre, ecrits sur le devis et la facture. Reintervention gratuite sans franchise.",
+    },
+  ];
+
+  // 4 etapes process
+  const processSteps = [
+    { number: "01", title: "Prise d'appel", body: `Pre-diagnostic au telephone (5 min) : nature de la panne, marque du moteur, type de tablier. Estimation de l'urgence et planification du delai d'intervention (30 min en horaires ouvrables sur ${zoneName}).` },
+    { number: "02", title: "Diagnostic sur place", body: `Inspection complete en 15 min : axe, coulisses, tablier, moteur, serrure. Verification specifique aux contraintes aixoises (mistral, calcaire, exposition).` },
+    { number: "03", title: "Devis ferme signe", body: "Devis ligne par ligne calcule au tarif catalogue constructeur. Signe sur place avant toute intervention. Pas de surfacturation post-intervention." },
+    { number: "04", title: "Intervention + test final", body: "Realisation des gestes techniques validees. Test sur 3 cycles complets montee/descente sous charge reelle. Bordereau ecrit conserve 5 ans." },
+  ];
+
+  const ctaHref = "/contact/";
+  const ctaLabel = `DEVIS ${service.name.toUpperCase()}`;
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify([breadcrumbSchema, serviceSchema]) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <Header />
       <main>
-        {/* Hero */}
-        <section className="relative w-full px-2 md:px-[10px] pt-2 md:pt-[10px]">
-          <div className="relative w-full overflow-hidden rounded-[12px] min-h-[480px] md:min-h-[540px]">
-            <img
-              src={heroImg}
-              alt={`${service.name} rideau metallique ${zoneName}`}
-              title={`${service.name} rideau metallique ${zoneName}`}
-              width={2400}
-              height={1200}
-              loading="eager"
-              fetchPriority="high"
-              decoding="async"
-              className="absolute inset-0 w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-b from-[#1A1F18]/70 via-[#1A1F18]/45 to-[#1A1F18]/80" aria-hidden />
-            <div className="relative z-10 flex flex-col items-start justify-end px-5 md:px-10 py-12 md:py-16 min-h-[480px] md:min-h-[540px] max-w-[1280px] mx-auto">
-              <nav className="text-[13px] text-white/75 mb-3">
-                <Link href="/" className="hover:text-white">Accueil</Link>
-                <span className="mx-2">/</span>
-                <Link href={`/${service.slug}-${citySlug}/`} className="hover:text-white">{service.name}</Link>
-                <span className="mx-2">/</span>
-                <span className="text-white">{zoneName}</span>
-              </nav>
-              <h1 className="text-white max-w-[860px]" style={{ textShadow: "0 2px 8px rgba(0,0,0,0.5)" }}>
-                {service.name} rideau metallique {zoneName} ({zonePostal})
-              </h1>
-              <p className="text-white/90 text-[16px] md:text-[18px] mt-4 max-w-[720px]">
-                {content.introText}
-              </p>
-              <div className="flex flex-col sm:flex-row gap-3 mt-6">
-                <Link href="/contact/" className="inline-flex items-center justify-center h-12 px-6 bg-[#C28840] hover:bg-[#A66E2E] text-white text-[15px] font-semibold rounded-[8px]">
-                  Demander un devis pour {zoneName}
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section>
+        <PageHeader
+          eyebrow={`[ ${service.name.toUpperCase()} A ${zoneName.toUpperCase()} — URGENCE 24H/24 ]`}
+          headlinePre={service.name}
+          headlineHighlight="rideau metallique"
+          headlinePost={`a ${zoneName} (${zonePostal})`}
+          body={content.introText.split('. ').slice(0, 2).join('. ') + '.'}
+          ctas={[
+            { label: ctaLabel, href: ctaHref, variant: "primary" },
+            { label: "ZONES D'INTERVENTION", href: "/zones/", variant: "white" },
+          ]}
+          bgImage={heroImg}
+          bgAlt={`${service.name} rideau metallique ${zoneName}`}
+          proof={`${siteConfig.rating}/5 sur ${siteConfig.ratingCount} avis Google a ${siteConfig.city}`}
+          proofAvatars={[
+            "/images/gallery/depannage-rideau-metallique-drm-services.webp",
+            "/images/gallery/installation-rideau-metallique-drm.webp",
+            "/images/gallery/fabrication-rideau-metallique-france.webp",
+          ]}
+          breadcrumb={[
+            { label: "Accueil", href: "/" },
+            { label: service.name, href: `/${service.slug}-${citySlug}/` },
+            { label: zoneName },
+          ]}
+        />
 
-        {/* Stats / process */}
-        <section className="bg-white py-14 md:py-20 px-5 md:px-10">
-          <div className="max-w-[1280px] mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-            {[
-              { v: siteConfig.delai + " min", l: "Delai moyen d'intervention" },
-              { v: "24/7", l: "Disponibilite urgence" },
-              { v: siteConfig.experience + " ans", l: "Experience reseau DRM" },
-              { v: "2 ans", l: "Garantie pieces" },
-            ].map((s) => (
-              <div key={s.l} className="bg-[#F5F1E6] rounded-[12px] p-5 md:p-6 text-center">
-                <div className="text-[#2D3F2A] text-[28px] md:text-[34px] font-bold leading-none mb-2">{s.v}</div>
-                <div className="text-[#4F5648] text-[13px] md:text-[14px] leading-snug">{s.l}</div>
-              </div>
-            ))}
-          </div>
-        </section>
+        <ServiceFeatures
+          eyebrow={`[ NOS GARANTIES ${service.name.toUpperCase()} ]`}
+          heading={content.seo1Title}
+          body={content.seo2Text.split('. ')[0] + '.'}
+          features={features}
+          showcaseImage={showcaseImg}
+          showcaseAlt={`${service.name} rideau metallique ${zoneName}`}
+        />
 
-        {/* Intro SEO */}
-        <section className="bg-white pb-14 md:pb-20 px-5 md:px-10">
-          <div className="max-w-[1280px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-start">
-            <div>
-              <span className="inline-block bg-[#F5F1E6] px-3 py-1.5 rounded-full text-[11px] tracking-[0.18em] uppercase text-[#4F5648] font-semibold mb-3">
-                [ {service.name} rideau metallique {zoneName} ]
-              </span>
-              <h2 className="text-[#181C16] mb-4">{content.introTitle}</h2>
-              <p className="text-[#4F5648] text-[16px] leading-[1.75]">{content.introText}</p>
-            </div>
-            <div>
-              <h3 className="text-[#181C16] text-[20px] md:text-[22px] font-semibold mb-3">Pannes et besoins frequents</h3>
-              <ul className="grid grid-cols-1 gap-2 text-[15px] text-[#4F5648]">
-                {word.problemes.map((p) => (
-                  <li key={p} className="flex items-start gap-2">
-                    <span className="text-[#C28840] mt-1">&#8226;</span>
-                    <span>{p}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </section>
+        <ServiceProcess
+          eyebrow={`[ METHODE DRM ${siteConfig.city.toUpperCase()} ]`}
+          heading={`Une intervention de ${word.keyword} a ${zoneName} en 4 etapes`}
+          steps={processSteps}
+          image={processImg}
+          imageAlt={`Process ${service.name} rideau metallique ${zoneName}`}
+        />
 
-        {/* Types intervention */}
-        <section className="bg-[#F5F1E6] py-14 md:py-20 px-5 md:px-10">
-          <div className="max-w-[1280px] mx-auto">
-            <div className="max-w-[820px] mb-8">
-              <h2 className="text-[#181C16] mb-3">Gestes techniques DRM pour le {service.name.toLowerCase()} de rideau metallique a {zoneName}</h2>
-              <p className="text-[#4F5648] text-[16px] leading-relaxed">{content.typesIntro}</p>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {word.gestes.map((g, i) => (
-                <div key={g} className="bg-white rounded-[12px] p-5 md:p-6 flex flex-col gap-2">
-                  <div className="text-[#2D3F2A] text-[13px] font-bold">{String(i + 1).padStart(2, "0")}</div>
-                  <div className="text-[#181C16] text-[16px] md:text-[17px] font-semibold leading-snug">{g}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* SEO Block 1 */}
-        <section className="bg-white py-14 md:py-20 px-5 md:px-10">
-          <div className="max-w-[1280px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center">
-            <div>
-              <h2 className="text-[#181C16] mb-4">{content.seo1Title}</h2>
-              <p className="text-[#4F5648] text-[16px] leading-[1.75]">{content.seo1Text}</p>
-            </div>
-            <div className="relative w-full h-[320px] md:h-[440px] rounded-[12px] overflow-hidden">
-              <img src={heroImg} alt={`${service.name} rideau metallique ${zoneName}`} title={`${service.name} rideau metallique ${zoneName}`} width={1200} height={800} loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-cover" />
-            </div>
-          </div>
-        </section>
-
-        {/* SEO Block 2 */}
-        <section className="bg-[#F5F1E6] py-14 md:py-20 px-5 md:px-10">
-          <div className="max-w-[1280px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center">
-            <div className="lg:order-2">
-              <h2 className="text-[#181C16] mb-4">{content.seo2Title}</h2>
-              <p className="text-[#4F5648] text-[16px] leading-[1.75]">{content.seo2Text}</p>
-            </div>
-            <div className="relative w-full h-[320px] md:h-[440px] rounded-[12px] overflow-hidden lg:order-1">
-              <img src="/images/gallery/installation-rideau-metallique-drm.webp" alt={`Atelier DRM ${zoneName} rideau metallique`} title={`Atelier DRM ${zoneName} rideau metallique`} width={1200} height={800} loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-cover" />
-            </div>
-          </div>
-        </section>
-
-        {/* Hyper-local */}
-        <ServiceZoneSpecific
+        <ServiceZoneLocal
           zoneName={zoneName}
           zonePostal={zonePostal}
           serviceName={service.name}
           local={local}
         />
 
-        {/* Local expertise text + why us */}
-        <section className="bg-white py-14 md:py-20 px-5 md:px-10">
-          <div className="max-w-[1280px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10">
-            <div className="bg-[#F5F1E6] rounded-[12px] p-6 md:p-8">
-              <h2 className="text-[#181C16] mb-3">{content.localExpertiseTitle}</h2>
-              <p className="text-[#4F5648] text-[15px] leading-[1.75]">{content.localExpertiseText}</p>
-            </div>
-            <div className="bg-[#2D3F2A] text-white rounded-[12px] p-6 md:p-8">
-              <h2 className="text-white mb-3">{content.whyUsTitle}</h2>
-              <p className="text-white/90 text-[15px] leading-[1.75]">{content.whyUsText}</p>
-            </div>
-          </div>
-        </section>
+        <ServiceFaq
+          eyebrow="[ FAQ ]"
+          heading={`Questions frequentes sur le ${word.keyword} a ${zoneName}`}
+          sideText={`Toutes les reponses aux questions des commercants, artisans et industriels de ${zoneName} et du Pays d'Aix avant une intervention DRM.`}
+          cta={{ label: ctaLabel, href: ctaHref }}
+          items={content.faq}
+        />
 
-        {/* FAQ */}
-        <section className="bg-[#F5F1E6] py-14 md:py-20 px-5 md:px-10">
-          <div className="max-w-[1280px] mx-auto">
-            <h2 className="text-[#181C16] mb-8 max-w-[820px]">
-              FAQ {service.name} rideau metallique {zoneName}
-            </h2>
-            <div className="flex flex-col gap-3">
-              {content.faq.map((f, i) => (
-                <details key={i} className="bg-white rounded-[12px] p-5 md:p-6 group">
-                  <summary className="cursor-pointer text-[#181C16] text-[16px] md:text-[17px] font-semibold list-none flex items-center justify-between gap-4">
-                    <span>{f.question}</span>
-                    <span className="shrink-0 w-8 h-8 rounded-full bg-[#F5F1E6] flex items-center justify-center text-[#2D3F2A]">+</span>
-                  </summary>
-                  <p className="mt-3 text-[#4F5648] text-[15px] leading-relaxed">{f.answer}</p>
-                </details>
-              ))}
-            </div>
-          </div>
-        </section>
+        <ServiceLinks
+          currentServiceId={service.id}
+          currentZoneSlug={zoneSlug}
+          zoneName={zoneName}
+        />
 
-        {/* Maillage services */}
-        <section className="bg-white py-14 md:py-20 px-5 md:px-10">
-          <div className="max-w-[1280px] mx-auto">
-            <h2 className="text-[#181C16] mb-3">Nos 6 autres services rideau metallique a {zoneName}</h2>
-            <p className="text-[#4F5648] text-[16px] mb-8 max-w-[680px]">
-              DRM {siteConfig.city} couvre l&apos;integralite du cycle de vie de votre rideau metallique. Explorez les autres services disponibles sur {zoneName}.
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {otherServices.map((s) => (
-                <Link key={s.id} href={`/${s.slug}-${zoneSlug}/`} className="group bg-[#F5F1E6] hover:bg-[#2D3F2A] hover:text-white p-5 rounded-[12px] transition-colors">
-                  <div className="text-[16px] md:text-[17px] font-semibold text-[#181C16] group-hover:text-white">{s.name} de rideau metallique</div>
-                  <div className="text-[13px] text-[#4F5648] group-hover:text-white/80 mt-1">{s.shortDescription}</div>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Zones voisines */}
-        <section className="bg-[#F5F1E6] py-14 md:py-20 px-5 md:px-10">
-          <div className="max-w-[1280px] mx-auto">
-            <h2 className="text-[#181C16] mb-3">{service.name} de rideau metallique dans les communes voisines de {zoneName}</h2>
-            <p className="text-[#4F5648] text-[16px] mb-8 max-w-[680px]">
-              DRM {siteConfig.city} intervient avec les memes delais et tarifs dans les communes voisines de {zoneName}.
-            </p>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
-              {neighborZones.map((z) => (
-                <Link key={z.slug} href={`/${service.slug}-${z.slug}/`} className="bg-white hover:bg-[#2D3F2A] hover:text-white p-4 rounded-[8px] transition-colors flex flex-col">
-                  <span className="text-[15px] font-semibold text-[#181C16]">{z.name}</span>
-                  <span className="text-[12px] text-[#4F5648]">{z.postalCode}</span>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Final CTA */}
-        <section className="bg-[#1A1F18] text-white py-14 md:py-20 px-5 md:px-10">
-          <div className="max-w-[820px] mx-auto text-center">
-            <h2 className="text-white mb-4">{content.ctaTitle}</h2>
-            <p className="text-white/85 text-[16px] md:text-[17px] mb-7">
-              Devis gratuit en 24h, intervention sous {siteConfig.delai} minutes en horaires ouvrables, garantie 2 ans pieces / 1 an main-d&apos;oeuvre.
-            </p>
-            <Link href="/contact/" className="inline-flex items-center justify-center h-12 px-7 bg-[#C28840] hover:bg-[#A66E2E] text-white text-[15px] font-semibold rounded-[8px]">
-              Demander un devis gratuit
-            </Link>
-          </div>
-        </section>
+        <CtaSection />
       </main>
       <Footer />
-      <FloatingCallButton />
     </>
   );
 }

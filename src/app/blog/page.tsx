@@ -39,7 +39,7 @@ export default function BlogPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {posts.map((p) => (
                 <Link key={p.slug} href={`/blog/${p.slug}/`} className="flex flex-col gap-4 group">
-                  <div className="relative rounded-[20px] overflow-hidden aspect-[4/3] bg-[#fbfbfb]">
+                  <div className="relative rounded-[24px] overflow-hidden aspect-[4/3] bg-[#fbfbfb]">
                     <img src={p.img} alt={p.title} title={p.title} loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                   </div>
                   <div className="flex items-center gap-3 text-[12px] text-[#050505]/55 uppercase tracking-[0.08em]">

@@ -20,13 +20,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/confidentialite/`, priority: 0.2, lastModified: today, changeFrequency: "yearly" as const },
   ];
 
-  const cityServicePages = services.map((s) => ({
-    url: `${base}/${s.slug}-${citySlug}/`,
-    priority: 0.95,
-    lastModified: today,
-    changeFrequency: "weekly" as const,
-  }));
-
+  // Cannibalisation home : on n'expose plus `/{service}-rideau-metallique-{citySlug}/`
+  // (la home cible deja ce keyword). Seules les variantes par zone existent.
   const subcityPages = zones.flatMap((z) =>
     services.map((s) => ({
       url: `${base}/${s.slug}-${z.slug}/`,
@@ -43,5 +38,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFrequency: "monthly" as const,
   }));
 
-  return [...staticPages, ...cityServicePages, ...subcityPages, ...blogPages];
+  return [...staticPages, ...subcityPages, ...blogPages];
 }

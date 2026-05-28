@@ -7,6 +7,8 @@ import { siteConfig, services } from "@/config/site";
 import { ArrowRight } from "./icons";
 
 const citySlug = siteConfig.cityShort.toLowerCase().replace(/\s+/g, "-");
+// Cannibalisation home : on retire `depannage` du menu (la home cible deja ce keyword)
+const navServices = services.filter((s) => s.id !== "depannage");
 
 const serviceVisuals: Record<string, string> = {
   depannage: "/images/gallery/depannage-rideau-metallique-drm-reparation.webp",
@@ -63,14 +65,14 @@ export default function Header() {
             </button>
             {showServices && (
               <div className="absolute top-full left-1/2 -translate-x-1/2 pt-3 z-50">
-                <div className="bg-white rounded-[20px] shadow-2xl border border-black/5 p-6 w-[720px] grid grid-cols-2 gap-3">
-                  {services.map((s) => (
+                <div className="bg-white rounded-[24px] shadow-2xl border border-black/5 p-6 w-[720px] grid grid-cols-2 gap-3">
+                  {navServices.map((s) => (
                     <Link
                       key={s.id}
                       href={`/${s.slug}-${citySlug}/`}
                       className="flex items-center gap-3 p-3 rounded-[12px] hover:bg-[#fbfbfb] transition-colors group"
                     >
-                      <span className="shrink-0 w-14 h-14 rounded-[10px] overflow-hidden bg-[#fbfbfb] relative">
+                      <span className="shrink-0 w-14 h-14 rounded-[12px] overflow-hidden bg-[#fbfbfb] relative">
                         <Image src={serviceVisuals[s.id]} alt={s.name} fill className="object-cover" sizes="56px" />
                       </span>
                       <span className="flex flex-col">
@@ -92,17 +94,33 @@ export default function Header() {
         </nav>
 
         <div className="flex items-center gap-2 shrink-0">
-          {/* CTA secondaire — appel / contact express (visible md+) */}
-          <Link
-            href={siteConfig.phonePublic && siteConfig.phone ? siteConfig.phoneLink : "/contact/"}
-            className="hidden md:inline-flex items-center gap-2 px-3 py-2.5 rounded-full border border-[#050505]/15 text-[12px] font-semibold text-[#050505] hover:bg-[#fbfbfb] transition-colors"
-          >
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
-              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke="#050505" strokeWidth="2" />
-            </svg>
-            <span className="hidden xl:inline">URGENCE 30 MIN</span>
-            <span className="xl:hidden">URGENCE</span>
-          </Link>
+          {/* CTA appel — numero visible (desktop md+) */}
+          {siteConfig.phonePublic && siteConfig.phone && (
+            <a
+              href={siteConfig.phoneLink}
+              className="hidden md:inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-[#2D3F2A] text-white text-[13px] font-bold hover:bg-[#1F2C1D] transition-colors"
+              aria-label={`Appeler le ${siteConfig.phone}`}
+            >
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke="currentColor" strokeWidth="2" />
+              </svg>
+              <span className="hidden lg:inline">{siteConfig.phone}</span>
+              <span className="lg:hidden">Appeler</span>
+            </a>
+          )}
+
+          {/* Mobile : icone phone seule */}
+          {siteConfig.phonePublic && siteConfig.phone && (
+            <a
+              href={siteConfig.phoneLink}
+              className="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-full bg-[#2D3F2A] text-white"
+              aria-label={`Appeler le ${siteConfig.phone}`}
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke="currentColor" strokeWidth="2" />
+              </svg>
+            </a>
+          )}
 
           {/* CTA primary devis */}
           <Link href="/contact/" className="btn-primary !py-3 !px-4 !text-[12px]">
@@ -129,7 +147,7 @@ export default function Header() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="lg:hidden mt-2 bg-white rounded-[20px] shadow-2xl border border-black/5 p-6 mx-2">
+        <div className="lg:hidden mt-2 bg-white rounded-[24px] shadow-2xl border border-black/5 p-6 mx-2">
           <nav className="flex flex-col gap-1">
             {navLinks.map((l) => (
               <Link key={l.href} href={l.href} onClick={() => setMobileOpen(false)} className="py-3 text-[15px] font-medium text-[#050505] border-b border-black/5 last:border-0">
@@ -139,7 +157,7 @@ export default function Header() {
             <div className="py-3 border-b border-black/5">
               <div className="text-[12px] font-semibold uppercase tracking-[0.1em] text-[#050505]/55 mb-3">Nos services</div>
               <div className="flex flex-col gap-1">
-                {services.map((s) => (
+                {navServices.map((s) => (
                   <Link key={s.id} href={`/${s.slug}-${citySlug}/`} onClick={() => setMobileOpen(false)} className="py-2 text-[14px] text-[#050505]/85">
                     {s.name}
                   </Link>

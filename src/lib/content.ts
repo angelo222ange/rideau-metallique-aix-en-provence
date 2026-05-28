@@ -51,26 +51,13 @@ export function generateSlug(service: string, zone: string): string {
   return `${service}-${zone}`;
 }
 
-export function parseSlug(slug: string): { service: typeof services[0]; zone: typeof zones[0] | null } | null {
+export function parseSlug(slug: string): { service: typeof services[0]; zone: typeof zones[0] } | null {
+  // Cannibalisation home : on n'autorise QUE les variantes par zone (pas de `${service}-${citySlug}`)
   for (const service of services) {
     if (slug.startsWith(service.slug + "-")) {
       const zoneSlug = slug.slice(service.slug.length + 1);
       const zone = zones.find((z) => z.slug === zoneSlug);
       if (zone) return { service, zone };
-      const citySlug = siteConfig.city.toLowerCase().replace(/[\s']/g, "-");
-      if (zoneSlug === citySlug) {
-        return {
-          service,
-          zone: {
-            name: siteConfig.city,
-            slug: citySlug,
-            postalCode: siteConfig.postalCode,
-            distance: "0 km",
-            lat: siteConfig.geo.latitude,
-            lng: siteConfig.geo.longitude,
-          },
-        };
-      }
     }
   }
   return null;

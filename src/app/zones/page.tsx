@@ -45,7 +45,7 @@ export default function ZonesPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
               {allZones.map((z) => (
-                <div key={z.slug} className="bg-[#fbfbfb] rounded-[20px] p-6 flex flex-col gap-4 hover:shadow-lg transition-shadow border border-black/5">
+                <div key={z.slug} className="bg-[#fbfbfb] rounded-[24px] p-6 flex flex-col gap-4 hover:shadow-lg transition-shadow border border-black/5">
                   <div className="flex items-baseline justify-between gap-3">
                     <h3 className="h2-sm text-[#050505]">{z.name}</h3>
                     <span className="text-[13px] text-[#050505]/55 font-mono">{z.postalCode}</span>

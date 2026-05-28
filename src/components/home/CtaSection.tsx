@@ -7,7 +7,7 @@ export default function CtaSection() {
   return (
     <section className="px-6 sm:px-10 lg:px-12 pb-24">
       <div className="container">
-        <div className="relative rounded-[32px] overflow-hidden min-h-[360px] flex items-center">
+        <div className="relative rounded-[24px] overflow-hidden min-h-[360px] flex items-center">
           <div className="absolute inset-0 z-0">
             <Image
               src={ctaSection.bg}

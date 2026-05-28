@@ -7,7 +7,7 @@ export const nav = {
   logoLight: { src: "/images/logos/logo-drm-aix-en-provence.webp", alt: "DRM Aix-en-Provence" },
   links: [
     { label: "Accueil", href: "/" },
-    { label: "Services", href: "/depannage-rideau-metallique-aix-en-provence/" },
+    { label: "Services", href: "/#services" },
     { label: "Zones", href: "/zones/" },
     { label: "Blog", href: "/blog/" },
     { label: "Contact", href: "/contact/" },
@@ -99,7 +99,7 @@ export const services = {
         "Lame sortie du rail apres rafale de mistral",
         "Serrure forcee ou cylindre grippe",
       ],
-      cta: { label: "DEVIS DEPANNAGE", href: `/depannage-rideau-metallique-${cfg.cityShort.toLowerCase().replace(/\s+/g, "-")}/` },
+      cta: { label: "DEVIS DEPANNAGE", href: "/contact/" },
       // Photo contextuelle : intervention reparation
       image: "/images/gallery/depannage-rideau-metallique-drm-reparation.webp",
       imageKind: "context" as const,
@@ -233,12 +233,10 @@ export const projects = {
         { label: "GARANTIE", value: "2", unit: "ans" },
       ],
       images: [
-        "/images/gallery/rideau-metallique-grille-bijoutier-realisation.webp",
-        "/images/gallery/lame-grille-bijoutier-rideau-metallique.webp",
-        "/images/gallery/depannage-rideau-metallique-lame-bijoutier.webp",
-        "/images/gallery/rideau-metallique-bijoutier-commerce.webp",
+        "/images/chantiers-aix/bijouterie-mazarin-aix-1.webp",
+        "/images/chantiers-aix/bijouterie-mazarin-aix-2.webp",
       ],
-      href: "/depannage-rideau-metallique-aix-en-provence/",
+      href: "/contact/",
     },
     {
       title: "Showroom retail park des Milles",
@@ -255,10 +253,8 @@ export const projects = {
         { label: "GARANTIE", value: "2", unit: "ans" },
       ],
       images: [
-        "/images/gallery/realisation-rideau-metallique-lame-pleinela-jdsport-france.webp",
-        "/images/gallery/realisation-rideau-metallique-lame-pleine-industriel-france.webp",
-        "/images/gallery/realisation-rideau-metallique-lame-pleine-commerce.webp",
-        "/images/gallery/installation-rideau-metallique-anti-effraction.webp",
+        "/images/chantiers-aix/showroom-milles-aix-1.webp",
+        "/images/chantiers-aix/showroom-milles-aix-2.webp",
       ],
       href: "/depannage-rideau-metallique-les-milles/",
     },
@@ -276,10 +272,8 @@ export const projects = {
         { label: "GARANTIE", value: "2", unit: "ans" },
       ],
       images: [
-        "/images/gallery/realisation-rideau-metallique-lame-pleine-industriel-france.webp",
-        "/images/gallery/realisation-rideau-metallique-garage.webp",
-        "/images/gallery/rideau-metallique-industriel-lame-pleine.webp",
-        "/images/gallery/rideau-metallique-industrielle-rideau-metallique-drm.webp",
+        "/images/chantiers-aix/hangars-avon-gardanne-1.webp",
+        "/images/chantiers-aix/hangars-avon-gardanne-2.webp",
       ],
       href: "/depannage-rideau-metallique-gardanne/",
     },
@@ -451,9 +445,8 @@ export const footer = {
   },
   linkGroups: [
     {
-      title: "NOS 7 SERVICES",
+      title: "NOS SERVICES",
       links: [
-        { label: `Depannage a ${cfg.city}`, href: `/depannage-rideau-metallique-${cfg.cityShort.toLowerCase().replace(/\s+/g, "-")}/` },
         { label: `Installation a ${cfg.city}`, href: `/installation-rideau-metallique-${cfg.cityShort.toLowerCase().replace(/\s+/g, "-")}/` },
         { label: `Reparation a ${cfg.city}`, href: `/reparation-rideau-metallique-${cfg.cityShort.toLowerCase().replace(/\s+/g, "-")}/` },
         { label: `Motorisation a ${cfg.city}`, href: `/motorisation-rideau-metallique-${cfg.cityShort.toLowerCase().replace(/\s+/g, "-")}/` },

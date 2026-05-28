@@ -23,7 +23,7 @@ export const posts: BlogPost[] = [
       {
         type: "p",
         content:
-          "Quand un commercant ou un industriel doit choisir un rideau metallique, l'arbitrage entre lames pleines P57, P90 et P140 est determinant. Ces trois references couvrent l'essentiel des installations DRM Aix-en-Provence sur la Pays d'Aix. Voici les criteres a connaitre avant de commander.",
+          "Quand un commercant ou un industriel doit choisir un rideau metallique, l'arbitrage entre lames pleines P57, P90 et P140 est determinant. Ces trois references couvrent l'essentiel des installations DRM Aix-en-Provence sur le Pays d'Aix. Voici les criteres a connaitre avant de commander.",
       },
       {
         type: "h2",
@@ -50,7 +50,7 @@ export const posts: BlogPost[] = [
       {
         type: "p",
         content:
-          "La lame P140 mesure 140 mm de hauteur, en double paroi, avec isolation polyurethane interieure. Elle est reservee aux entrepots, hangars logistiques, parkings et industriels. Sur la Pays d'Aix, nous l'installons frequemment sur le Port de Gardanne, Tarnos et la plateforme multimodale de Mouguerre. Cout : a partir de 1 500 euros pour un rideau de 4 metres.",
+          "La lame P140 mesure 140 mm de hauteur, en double paroi, avec isolation polyurethane interieure. Elle est reservee aux entrepots, hangars logistiques, parkings et industriels. Sur le Pays d'Aix, nous l'installons frequemment sur le Port de Gardanne, Tarnos et la plateforme multimodale de Mouguerre. Cout : a partir de 1 500 euros pour un rideau de 4 metres.",
       },
       {
         type: "h2",
@@ -68,7 +68,7 @@ export const posts: BlogPost[] = [
       {
         type: "p",
         content:
-          "Au-dela du format de lame, le materiau et la finition influent sur le prix et la durabilite. L'acier galvanise (le standard) est durable mais visible. L'aluminium thermolaque permet un thermolaquage couleur (40 teintes RAL standard) qui s'integre a la facade et resiste mieux aux embruns salins de Aix-en-Provence et Le Tholonet. L'inox brosse, plus rare et plus cher, est reserve aux commerces de luxe et aux environnements tres exposes (front de mer). DRM Aix-en-Provence fournit les trois materiaux depuis son atelier local.",
+          "Au-dela du format de lame, le materiau et la finition influent sur le prix et la durabilite. L'acier galvanise (le standard) est durable mais visible. L'aluminium thermolaque permet un thermolaquage couleur (40 teintes RAL standard) qui s'integre a la facade et resiste mieux aux humidite hivernale de Aix-en-Provence et Le Tholonet. L'inox brosse, plus rare et plus cher, est reserve aux commerces de luxe et aux environnements tres exposes (front de mer). DRM Aix-en-Provence fournit les trois materiaux depuis son atelier local.",
       },
       {
         type: "h2",
@@ -77,7 +77,7 @@ export const posts: BlogPost[] = [
       {
         type: "p",
         content:
-          "Avec un entretien correct (1 visite annuelle minimum), un rideau metallique tient en moyenne 25 a 35 ans. Les lames P57 standards tiennent 20-25 ans, les P90 jusqu'a 30 ans, les P140 plus de 35 ans en usage industriel. Le moteur est generalement remplace une fois (vers 12-15 ans) avant que les lames soient changees. Sur la Pays d'Aix, l'exposition aux embruns salins reduit ces durees de 15-20 % si l'entretien preventif n'est pas suivi. C'est pourquoi DRM Aix-en-Provence recommande systematiquement un contrat d'entretien annuel pour les commerces en front de mer.",
+          "Avec un entretien correct (1 visite annuelle minimum), un rideau metallique tient en moyenne 25 a 35 ans. Les lames P57 standards tiennent 20-25 ans, les P90 jusqu'a 30 ans, les P140 plus de 35 ans en usage industriel. Le moteur est generalement remplace une fois (vers 12-15 ans) avant que les lames soient changees. Sur le Pays d'Aix, l'exposition aux humidite hivernale reduit ces durees de 15-20 % si l'entretien preventif n'est pas suivi. C'est pourquoi DRM Aix-en-Provence recommande systematiquement un contrat d'entretien annuel pour les commerces en front de mer.",
       },
     ],
   },
@@ -112,7 +112,7 @@ export const posts: BlogPost[] = [
       {
         type: "p",
         content:
-          "Le Simu T5 est l'equivalent francais du Somfy, fabrique a Gray (Haute-Saone). Memes performances, meme silence, prix legerement inferieur (10-15 %). Nous l'installons sur les commerces de la Pays d'Aix qui valorisent la production francaise et les delais de livraison plus courts en cas de panne.",
+          "Le Simu T5 est l'equivalent francais du Somfy, fabrique a Gray (Haute-Saone). Memes performances, meme silence, prix legerement inferieur (10-15 %). Nous l'installons sur les commerces de le Pays d'Aix qui valorisent la production francaise et les delais de livraison plus courts en cas de panne.",
       },
       {
         type: "h2",
@@ -148,7 +148,7 @@ export const posts: BlogPost[] = [
       {
         type: "p",
         content:
-          "Le cout d'une motorisation depend du moteur, des options et de la marque. A titre indicatif sur Aix-en-Provence et la Pays d'Aix : motorisation tubulaire Somfy/Simu avec axe et telecommande, a partir de 600 euros pose comprise. Motorisation centrale ACM Titan pour rideau lourd, a partir de 950 euros. Ajout d'une centrale domotique : +250 a 500 euros. Le devis precis est etabli sur place par DRM Aix-en-Provence, sans frais de deplacement separes. Garantie 2 ans pieces, 1 an main-d'oeuvre.",
+          "Le cout d'une motorisation depend du moteur, des options et de la marque. A titre indicatif sur Aix-en-Provence et le Pays d'Aix : motorisation tubulaire Somfy/Simu avec axe et telecommande, a partir de 600 euros pose comprise. Motorisation centrale ACM Titan pour rideau lourd, a partir de 950 euros. Ajout d'une centrale domotique : +250 a 500 euros. Le devis precis est etabli sur place par DRM Aix-en-Provence, sans frais de deplacement separes. Garantie 2 ans pieces, 1 an main-d'oeuvre.",
       },
       {
         type: "h2",
@@ -174,7 +174,7 @@ export const posts: BlogPost[] = [
       {
         type: "p",
         content:
-          "Un rideau metallique bloque a la fermeture est l'urgence classique du commerce : impossible de fermer la boutique en fin de journee, biens exposes, assurance qui ne couvre pas si la fermeture n'est pas effective. DRM Aix-en-Provence traite plusieurs cas par semaine sur la Pays d'Aix. Voici les 5 causes les plus frequentes.",
+          "Un rideau metallique bloque a la fermeture est l'urgence classique du commerce : impossible de fermer la boutique en fin de journee, biens exposes, assurance qui ne couvre pas si la fermeture n'est pas effective. DRM Aix-en-Provence traite plusieurs cas par semaine sur le Pays d'Aix. Voici les 5 causes les plus frequentes.",
       },
       {
         type: "h2",
@@ -246,7 +246,7 @@ export const posts: BlogPost[] = [
       {
         type: "p",
         content:
-          "Sur la Pays d'Aix, certains profils de commerces sont plus exposes au blocage de rideau metallique. Les boulangeries (ouverture matinale frequente, usure rapide), les bars-tabacs (frequence d'utilisation tres haute), les bijouteries (rideaux P90/P140 lourds, blocages frequents en cas de coupure de courant), les restaurants front de mer (corrosion accelaree par les embruns). DRM Aix-en-Provence tient un registre des interventions par profil et adapte le diagnostic des le premier appel selon le type de commerce et la zone (centre Aix-en-Provence, Gardanne historique, Le Tholonet, Les Milles commercial).",
+          "Sur le Pays d'Aix, certains profils de commerces sont plus exposes au blocage de rideau metallique. Les boulangeries (ouverture matinale frequente, usure rapide), les bars-tabacs (frequence d'utilisation tres haute), les bijouteries (rideaux P90/P140 lourds, blocages frequents en cas de coupure de courant), les restaurants front de mer (corrosion accelaree par les embruns). DRM Aix-en-Provence tient un registre des interventions par profil et adapte le diagnostic des le premier appel selon le type de commerce et la zone (centre Aix-en-Provence, Gardanne historique, Le Tholonet, Les Milles commercial).",
       },
     ],
   },

@@ -32,7 +32,7 @@ export default function ServiceLinks({
                 ? `/${s.slug}-${citySlug}/`
                 : `/${s.slug}-${currentZoneSlug}/`;
               return (
-                <Link key={s.id} href={href} className="bg-white rounded-[20px] p-6 flex flex-col gap-3 border border-black/5 hover:border-[#C28840]/40 hover:shadow-lg transition-all group">
+                <Link key={s.id} href={href} className="bg-white rounded-[24px] p-6 flex flex-col gap-3 border border-black/5 hover:border-[#C28840]/40 hover:shadow-lg transition-all group">
                   <h3 className="h2-sm text-[#050505]">{s.name}</h3>
                   <p className="text-[14px] text-[#050505]/65 leading-[1.5]">{s.shortDescription}</p>
                   <span className="inline-flex items-center gap-2 text-[#C28840] text-[14px] font-semibold mt-2">

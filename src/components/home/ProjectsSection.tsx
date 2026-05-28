@@ -26,7 +26,7 @@ function ProjectCard({ tile }: { tile: (typeof projects.tiles)[number] }) {
   const next = () => setIdx((i) => (i + 1) % total);
 
   return (
-    <article className="bg-white rounded-[28px] p-5 lg:p-6 grid grid-cols-1 lg:grid-cols-[1fr_1.05fr] gap-6 lg:gap-8 border border-[rgba(5,5,5,0.06)]">
+    <article className="bg-white rounded-[24px] p-5 lg:p-6 grid grid-cols-1 lg:grid-cols-[1fr_1.05fr] gap-6 lg:gap-8 border border-[rgba(5,5,5,0.06)]">
       {/* Left: content */}
       <div className="flex flex-col gap-5 p-2 lg:p-4">
         <h3>{tile.title}</h3>
@@ -57,7 +57,7 @@ function ProjectCard({ tile }: { tile: (typeof projects.tiles)[number] }) {
             {tile.stats.map((s) => (
               <div
                 key={s.label}
-                className="rounded-[14px] border border-[rgba(5,5,5,0.08)] px-3 py-3"
+                className="rounded-[12px] border border-[rgba(5,5,5,0.08)] px-3 py-3"
               >
                 <div className="text-[10px] tracking-[0.12em] font-semibold text-[#050505]/45 mb-1">
                   {s.label}
@@ -80,7 +80,7 @@ function ProjectCard({ tile }: { tile: (typeof projects.tiles)[number] }) {
       </div>
 
       {/* Right: image carousel */}
-      <div className="relative rounded-[20px] overflow-hidden aspect-square lg:aspect-auto lg:min-h-[490px] bg-[#0a0a0a]">
+      <div className="relative rounded-[24px] overflow-hidden aspect-square lg:aspect-auto lg:min-h-[490px] bg-[#0a0a0a]">
         {tile.images.map((src, i) => (
           <Image
             key={src}

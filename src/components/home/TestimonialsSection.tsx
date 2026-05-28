@@ -34,7 +34,7 @@ export default function TestimonialsSection() {
               return (
                 <article
                   key={i}
-                  className="bg-white rounded-[20px] p-6 flex flex-col gap-5 border border-[rgba(5,5,5,0.06)] min-h-[280px]"
+                  className="bg-white rounded-[24px] p-6 flex flex-col gap-5 border border-[rgba(5,5,5,0.06)] min-h-[280px]"
                 >
                   <div className="flex items-center gap-1 text-[#C28840]">
                     {Array.from({ length: 5 }).map((_, s) => (
@@ -63,7 +63,7 @@ export default function TestimonialsSection() {
             return (
               <article
                 key={i}
-                className="relative rounded-[20px] overflow-hidden min-h-[280px] bg-[#050505]"
+                className="relative rounded-[24px] overflow-hidden min-h-[280px] bg-[#050505]"
               >
                 <video
                   src={t.video}

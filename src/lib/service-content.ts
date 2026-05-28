@@ -8,6 +8,10 @@ export interface ServiceZoneContent {
   seo1Text: string;
   seo2Title: string;
   seo2Text: string;
+  seo3Title: string;
+  seo3Text: string;
+  seo4Title: string;
+  seo4Text: string;
   localExpertiseTitle: string;
   localExpertiseText: string;
   whyUsTitle: string;
@@ -159,26 +163,26 @@ const introTitleAngles: string[] = [
   "Votre {keyword} a {zone}, 24h/24 par DRM Aix-en-Provence",
   "DRM Aix-en-Provence : {keyword} a {zone}, intervention rapide",
   "{keyword} a {zone} : l'expertise DRM Aix-en-Provence",
-  "A {zone}, faites confiance a DRM Aix-en-Provence pour le {keyword}",
-  "Specialiste du {keyword} a {zone} et en Pays d'Aix",
+  "A {zone}, faites confiance a DRM Aix-en-Provence pour votre {keyword}",
+  "Specialiste de votre {keyword} a {zone} et sur le Pays d'Aix",
   "{keyword} a {zone} : devis gratuit en 24h",
-  "{zone} ({postal}) : le {keyword} avec DRM Aix-en-Provence",
-  "Un specialiste local du {keyword} a {zone}",
-  "DRM Aix-en-Provence, votre artisan pour le {keyword} a {zone}",
+  "{zone} ({postal}) : votre {keyword} avec DRM Aix-en-Provence",
+  "Un specialiste local de votre {keyword} a {zone}",
+  "DRM Aix-en-Provence, votre artisan pour votre {keyword} a {zone}",
   "Demandez votre {keyword} a {zone} en quelques minutes",
 ];
 
 const introTextAngles: string[] = [
-  "Du Cours Mirabeau au Vieil-Aix, des ruelles pavees du Mazarin a la rocade qui dessert Les Milles, DRM Aix-en-Provence intervient pour {verb} votre rideau metallique a {zone} ({postal}). Notre artisan local sait que les contraintes architecturales du centre historique aixois ne sont pas celles d'un hangar industriel : chaque {keyword} commence par un diagnostic adapte au tissu de {street1} et au voisinage de {landmark1}.",
-  "Quand il faut {verb} un rideau metallique a {zone} sous la chaleur provencale ou un soir de mistral, l'urgence ne tolere pas l'amateurisme. DRM Aix-en-Provence couvre tout le Pays d'Aix depuis le pied de la Sainte-Victoire : vehicule atelier rempli des pieces ACM, Somfy et Sommer en circulation sur le parc aixois, intervention sous 30 minutes en horaires ouvrables sur le quartier {quartier1}.",
-  "Vous cherchez un specialiste du {keyword} a {zone} qui connaisse vos {commerce1} ? DRM Aix-en-Provence est l'entreprise de reference pour les commerces du Cours Mirabeau, les bastides du Tholonet, les hangars de la zone Avon et les ateliers du pole d'activites des Milles. Notre savoir-faire couvre toutes les marques presentes sur l'agglomeration aixoise (Somfy, Simu, ACM Titan, Came, Nice, BFT, Sommer GIGAroll) et tous les formats de tablier.",
-  "Sur {zone}, le {keyword} repond a une logique tres provencale : mistral qui descend des Alpilles vers la plaine aixoise et torsionne les longues lames, soleil mediterraneen qui blanchit les teintes thermolaquees, calcaire pulverulent qui grippe les coulisses peu lubrifiees. DRM Aix-en-Provence forme ses techniciens a ces specificites depuis 25 ans, ce qui change la durabilite des interventions le long de {street1} et {street2}.",
-  "Au pied de la Sainte-Victoire, DRM Aix-en-Provence accompagne le {keyword} a {zone} ({postal}) sur des configurations tres heterogenes : vitrines etroites du centre ancien sous arcades baroques, devantures larges du retail park Pioline, sectionnels grandes dimensions des hangars de Meyreuil, rideaux residentiels des bastides aixoises de {quartier1}. Chaque type appelle des pieces, un outillage et un temps d'intervention specifiques.",
-  "Le {keyword} a {zone} a une dimension patrimoniale rare ailleurs : les Batiments de France imposent un nuancier RAL precis pour les facades du Mazarin et du Vieil-Aix, et les commerces de luxe du Cours Mirabeau exigent des tabliers discrets compatibles avec un retro-eclairage rideau ferme. DRM Aix-en-Provence travaille avec ce cahier des charges aixois depuis 25 ans, sur les commerces de {street1} comme sur les boutiques du quartier {quartier1}.",
-  "Cette page presente notre offre de {keyword} a {zone}. Que vous soyez restaurateur place des Cardeurs, bijoutier rue d'Italie, gerant d'un showroom au retail park des Milles, exploitant d'un hangar logistique a Gardanne ou commercant d'un village provencal aux abords de {landmark1}, l'equipe DRM Aix-en-Provence adapte son intervention. Devis ferme signe sur place, garantie 2 ans pieces neuves, 1 an main-d'oeuvre, sans franchise ni reserve.",
-  "Pour un {keyword} efficace a {zone}, il faut trois choses simultanees : un diagnostic precis sur le terrain provencal, des pieces d'origine compatibles avec le parc aixois (ACM Titan annees 90, Somfy RS100 recents, Sommer GIGAroll pour les hangars de la zone Avon), et un artisan joignable au telephone direct. DRM Aix-en-Provence reunit ces trois conditions depuis 25 ans, avec un delai moyen de 30 minutes sur {street1} et le quartier {quartier1}.",
-  "Confier votre {keyword} a {zone} a DRM Aix-en-Provence, c'est miser sur la continuite locale : le meme technicien revient pour entretenir, reparer et installer. Cette logique de proximite est rare en Pays d'Aix, ou la plupart des intervenants sous-traitent a des societes nationales qui changent d'equipe tous les six mois. Plus de 5000 interventions a notre actif sur l'agglomeration aixoise, dont une part significative autour de {commerce1} et de {landmark1}.",
-  "DRM Aix-en-Provence vous accompagne pour votre {keyword} a {zone} ({postal}) de la prise d'appel jusqu'a la garantie. Etapes : ecoute du besoin et pre-diagnostic au telephone, releve technique sur place avec inspection du tablier, du moteur et de la serrure, devis ferme calcule au tarif catalogue constructeur (pas de marge cachee), intervention dans le delai annonce, controle qualite, facturation transparente avec mention ecrite de la garantie. Cette discipline est notre signature aixoise.",
+  "DRM Aix-en-Provence intervient pour {verb} votre rideau metallique a {zone} ({postal}). Plus de 25 ans d'experience sur le Pays d'Aix et le Pays d'Aix, equipe de techniciens specialistes des fermetures metalliques pour commerces et industriels. Diagnostic precis, devis transparent, intervention dans les meilleurs delais sur tout le secteur autour de {landmark1}.",
+  "Quand il faut {verb} un rideau metallique a {zone}, vous avez besoin d'un specialiste local. DRM Aix-en-Provence couvre votre commune et l'ensemble du Pays d'Aix depuis 25+ ans. Vehicule atelier stocke en pieces detachees, intervention sous 30 minutes en moyenne dans le secteur, garantie sur les pieces et la main-d'oeuvre.",
+  "Vous cherchez un professionnel de votre {keyword} a {zone} ? DRM Aix-en-Provence est l'entreprise de reference pour les commerces, ateliers et entrepots de le Pays d'Aix. Notre savoir-faire couvre toutes les marques (Somfy, Simu, ACM, Nice, Came, BFT) et tous les types de rideaux (lames pleines P57/P90/P140, micro-perforees, grilles cobra, polycarbonate). Notre rayon d'action passe notamment par {street1} et {street2}.",
+  "Sur {zone} comme dans toute l'agglomeration de Aix-en-Provence-Les Milles-Gardanne, votre {keyword} demande un savoir-faire technique precis. DRM Aix-en-Provence dispose d'une equipe formee aux dernieres normes, d'un stock de pieces strategique et d'un atelier de fabrication a moins de 30 minutes. Resultat : intervention rapide, devis honnete, garantie ferme.",
+  "DRM Aix-en-Provence, c'est 25 ans d'experience appliques au {keyword} sur le Pays d'Aix Nord. A {zone} ({postal}), nous intervenons sur tout type de rideau metallique : commerces de centre-ville, ateliers, hangars industriels, parkings. Devis gratuit, intervention 24h/24, sans surcout urgence en horaires normaux. Le quartier {quartier1} est particulierement bien couvert.",
+  "Votre {keyword} a {zone} merite un specialiste qui connait votre commune. DRM Aix-en-Provence intervient regulierement sur le secteur, notre equipe maitrise les contraintes locales (vent aixois, humidite hivernale, batiments historiques) et adapte chaque intervention au contexte. Plus de 5000 interventions realisees sur le Pays d'Aix.",
+  "Cette page presente notre offre de {keyword} a {zone}. Que vous soyez gerant de boulangerie sur {street1}, restaurateur a {quartier1} ou industriel a proximite de {landmark1}, l'equipe DRM Aix-en-Provence adapte son intervention a votre activite et a votre type de fermeture metallique. Devis ferme avant intervention, garantie ecrite.",
+  "Pour un {keyword} efficace a {zone}, il faut trois choses : un diagnostic precis, des pieces d'origine et une equipe joignable rapidement. DRM Aix-en-Provence reunit ces trois conditions depuis 25 ans. Notre delai moyen d'intervention sur {zone} est de 30 minutes en horaires ouvrables, garanti contractuellement.",
+  "Confier votre {keyword} a {zone} a DRM Aix-en-Provence, c'est gagner du temps et de la serenite. Plus de 5000 interventions a notre actif sur le Pays d'Aix, dont une part significative sur votre commune et ses {commerce1}. Tous les techniciens sont salaries en interne, pas de sous-traitance.",
+  "DRM Aix-en-Provence vous accompagne pour votre {keyword} a {zone} ({postal}) de la demande de devis jusqu'a la pose finale. Notre methode est simple : ecoute du besoin, releve technique sur place, devis ferme, intervention dans le delai annonce, controle qualite et facturation transparente avec mention de la garantie de 2 ans.",
 ];
 
 const seo1TitleAngles: string[] = [
@@ -189,22 +193,22 @@ const seo1TitleAngles: string[] = [
   "Une intervention de {keyword} a {zone} en 4 etapes",
   "DRM Aix-en-Provence : votre {keyword} a {zone} pas a pas",
   "{keyword} a {zone} : du diagnostic a la garantie",
-  "L'approche DRM Aix-en-Provence du {keyword} a {zone}",
+  "L'approche DRM Aix-en-Provence de votre {keyword} a {zone}",
   "Les coulisses d'une intervention de {keyword} a {zone}",
-  "Methode et exigence pour le {keyword} a {zone}",
+  "Methode et exigence pour votre {keyword} a {zone}",
 ];
 
 const seo1TextAngles: string[] = [
-  "A {zone}, chaque intervention DRM Aix-en-Provence commence par un diagnostic sur le tablier dans son contexte aixois : facade calcaire qui peut avoir grippe l'axe, coulisses chauffees plein sud, soudures vibratoires si rideau face mistral. Le technicien inspecte axe, coulisses, tablier, moteur et serrure, puis chiffre ligne par ligne avant tout demontage. Le devis tient compte des contraintes Batiments de France pour les commerces du Mazarin ou du Vieil-Aix.",
-  "Notre methode pour {verb} un rideau metallique a {zone} suit le protocole aixois eprouve sur des centaines d'interventions : 1) inspection visuelle (etat des lames, oxydation due au calcaire, jeu des coulisses), 2) test electrique complet (moteur, fins de course, telecommande, condensateur), 3) verification mecanique (axe, ressorts, jonctions), 4) remise en service et trois cycles complets sous charge reelle. Cette discipline est inscrite sur le bordereau d'intervention.",
-  "DRM Aix-en-Provence traite chaque demande de {keyword} a {zone} avec un vehicule atelier dimensionne pour le parc local : lames pleines P57 (0,6 mm) et P90 (0,8 mm), moteurs tubulaires Somfy RS100 et Simu T5 frequents sur le neuf des Milles, moteurs centraux ACM Titan et RAPTOR 76 dominants sur le centre Aix annees 90, ressorts de compensation, coulisses en aluminium et acier, serrures profil europeen A2P. Notre rayon d'action couvre {street1}, {street2} et tout le quartier {quartier1}.",
-  "L'intervention de {keyword} a {zone} se decompose en quatre temps annonces au client : diagnostic aixois (15 min pour bien lire le contexte facade/exposition/mistral), devis ferme calcule au tarif catalogue constructeur, intervention proprement dite, et test final sur trois cycles montee/descente. A chaque etape, le commercant ou l'artisan est informe : nature du probleme, pieces remplacees, prix exact ligne par ligne, garantie 2 ans applicable. Pas de surfacturation post-intervention.",
-  "Pour {verb} un rideau metallique a {zone}, notre equipe dispose d'un outillage prepare specifiquement pour le centre Aix et les villages provencaux alentour : multimetre numerique pour les moteurs ACM annees 90, riveteuse pneumatique, scie sabre pour les coupes urgentes, soudeuse a l'arc 200A, gabarits de coupe pour les lames courantes. Si une piece sur-mesure manque (bastide aixoise avec ouverture cintree), notre atelier la fabrique et la livre sur place en moins de 4 heures.",
-  "A {zone}, l'efficacite d'une intervention DRM Aix-en-Provence repose sur la preparation : avant le depart, le technicien consulte le carnet d'adresse si rideau deja entretenu, prepare les pieces probables selon la marque connue du parc local, charge le vehicule. Cette anticipation reduit le temps sur place de 30 a 40 % par rapport a une intervention generaliste, et explique pourquoi nous facturons des forfaits courts sur les commerces du Mazarin meme en periode de mistral.",
-  "La phase de diagnostic est determinante pour un {keyword} reussi a {zone}. DRM Aix-en-Provence consacre les 15 premieres minutes a un audit complet adapte au contexte aixois : controle des fixations (scellements souvent agresses par le calcaire), mesure de l'usure des coulisses (oxydation differentielle nord/sud), test de continuite electrique, inspection des soudures (sensibles aux vibrations mistral), verification de la lubrification. Le technicien repere souvent un probleme connexe ignore par le commercant.",
-  "Pour le {keyword} a {zone}, DRM Aix-en-Provence applique un protocole calque sur les recommandations constructeurs (Somfy France, ACM Italie, Simu) mais enrichi de 25 ans d'observation sur le parc aixois : remplacer plutot que reparer une piece a risque, choisir le RAL agree Batiments de France pour le centre, jamais d'improvisation, traceabilite ecrite sur le bordereau d'intervention conserve cinq ans. Cette discipline distingue l'artisan local du depanneur generaliste.",
-  "Le succes d'un {keyword} a {zone} tient autant a la technique qu'a la communication avec le commercant ou l'artisan aixois. DRM Aix-en-Provence explique chaque geste : pourquoi cette piece d'origine ACM ou Somfy, pourquoi ce reglage adapte au mistral, quelles alternatives moins couteuses existent et leurs limites. Le client est implique dans la decision finale, le devis ecrit consigne tout, la facture confirme avec la garantie. 80 % de nos clients reviennent ou nous recommandent.",
-  "Une intervention de {keyword} a {zone} ne se limite pas a remettre en marche le rideau metallique. DRM Aix-en-Provence profite de chaque passage pour controler les composants secondaires : meme si la panne portait sur le moteur, le technicien verifie l'usure des coulisses (calcaire/oxydation), la tension des ressorts (mistral), l'etat de la serrure A2P, l'integrite des soudures. Ce controle preventif est inclus sans cout supplementaire et evite souvent une seconde panne dans les mois qui suivent.",
+  "A {zone}, chaque intervention DRM Aix-en-Provence commence par un diagnostic precis du rideau metallique. Notre technicien controle l'axe, les coulisses, le tablier, le moteur et la serrure. Si vous avez fourni votre numero, nous etablissons un pre-diagnostic au telephone pour evaluer l'urgence et prevoir le materiel necessaire. Sur place, le devis est etabli avant toute intervention : 25 ans d'experience nous permettent d'estimer le temps et les pieces en quelques minutes.",
+  "Notre methode pour {verb} un rideau metallique a {zone} suit un protocole eprouve : 1) inspection visuelle complete, 2) test des composants electriques (moteur, fins de course, telecommande), 3) verification mecanique (lames, axe, ressorts), 4) remise en service et test sous tension. Cette approche systematique evite les diagnostics partiels et garantit la durabilite de l'intervention.",
+  "DRM Aix-en-Provence traite chaque demande de {keyword} a {zone} de maniere structuree. Notre technicien arrive avec le vehicule atelier rempli de pieces detachees standard : lames pleines P57 et P90, moteurs tubulaires Somfy et Simu, moteurs centraux ACM, ressorts, serrures, coulisses. La plupart des interventions sont terminees en une seule visite. Notre rayon d'action couvre {street1}, {street2} et tout le quartier {quartier1}.",
+  "L'intervention de {keyword} a {zone} se decompose en quatre temps : diagnostic, devis sur place, intervention, test final. A chaque etape, le client est informe : nature du probleme, pieces a remplacer, prix exact, garantie applicable. Cette transparence est la regle DRM Aix-en-Provence depuis 25 ans : pas de surprise, pas de surfacturation, pas d'intervention non autorisee.",
+  "Pour {verb} un rideau metallique a {zone}, notre equipe dispose d'outils specialises : multimetre electrique, douilles a cliquet, perceuse a percussion, chalumeau, soudeuse a l'arc, gabarits de coupe pour les lames. Nous fabriquons et livrons sur place en moins de 4 heures en cas de besoin urgent d'une piece sur-mesure (lame, axe, coulisse).",
+  "A {zone}, l'efficacite d'une intervention DRM Aix-en-Provence repose sur la preparation. Avant le depart, le technicien consulte le carnet de l'adresse (si rideau deja connu), prepare les pieces probables, verifie la charge du vehicule. Cette anticipation reduit le temps sur place de 30 a 40 % par rapport a une intervention sans preparation, ce qui se traduit pour le client par un cout final plus bas.",
+  "La phase de diagnostic est determinante pour un {keyword} reussi a {zone}. DRM Aix-en-Provence consacre les 15 premieres minutes a un audit complet : controle des fixations, mesure de l'usure des coulisses, test de continuite electrique, inspection des soudures, verification de la lubrification. Cette rigueur evite les diagnostics partiels et les interventions repetees. Notre technicien repere souvent un probleme connexe ignore par le client.",
+  "Pour votre {keyword} a {zone}, DRM Aix-en-Provence applique un protocole calque sur les recommandations constructeurs (Somfy, ACM, Simu) : remplacer plutot que reparer une piece a risque, jamais d'improvisation, traceabilite ecrite de chaque geste sur le bordereau d'intervention. Cette discipline est ce qui differencie un artisan local d'un depanneur generaliste.",
+  "Le succes d'un {keyword} a {zone} tient autant a la technique qu'a la communication. DRM Aix-en-Provence explique chaque geste : pourquoi cette piece, pourquoi ce reglage, quelles alternatives existent. Le client est implique dans la decision finale, le devis ecrit consigne tout, la facture confirme. Cette pedagogie batit la confiance et explique pourquoi 80 % de nos clients reviennent ou nous recommandent.",
+  "Une intervention de {keyword} a {zone} ne se limite pas a remettre en marche le rideau metallique. DRM Aix-en-Provence profite de chaque passage pour controler les autres composants : meme si la panne portait sur le moteur, notre technicien verifie l'usure des coulisses, la tension des ressorts, l'etat de la serrure. Ce controle preventif est inclus dans le devis sans cout supplementaire, et evite souvent une seconde panne dans les mois qui suivent.",
 ];
 
 const seo2TitleAngles: string[] = [
@@ -214,50 +218,89 @@ const seo2TitleAngles: string[] = [
   "{keyword} a {zone} : pieces d'origine, garantie ferme",
   "Reactivite, transparence, garantie : DRM Aix-en-Provence a {zone}",
   "Equipement et savoir-faire DRM Aix-en-Provence pour {zone}",
-  "Stock pieces detachees pour le {keyword} a {zone}",
+  "Stock pieces detachees pour votre {keyword} a {zone}",
   "Marques partenaires et qualite a {zone}",
   "Engagement DRM Aix-en-Provence pour votre {keyword} a {zone}",
   "Securite et durabilite : nos standards pour {zone}",
 ];
 
 const seo2TextAngles: string[] = [
-  "Sur le secteur de {zone}, DRM Aix-en-Provence mobilise un veritable atelier embarque dimensionne pour le parc aixois : lames pleines P57 et P90, moteurs tubulaires Somfy RS100 et Simu T5 (commerces neufs des Milles), moteurs centraux ACM Titan et Centris XXL (centre Aix annees 90), moteurs lateraux Sommer GIGAroll (hangars Avon Gardanne), ressorts de compensation, coulisses anti-mistral, serrures profil europeen A2P. 90 % des interventions de {keyword} sont bouclees sans second deplacement.",
-  "Confier votre {keyword} a DRM Aix-en-Provence a {zone}, c'est miser sur l'artisan local etabli au pied de la Sainte-Victoire depuis 25 ans. Nous travaillons exclusivement en pieces d'origine constructeur (Somfy France, Simu, Nice Era, ACM Italie, Came, BFT, Sommer, Masinara). Nos techniciens sont formes regulierement aux nouveautes : motorisations connectees compatibles Aixenbus domotique, axes haute charge pour les sectionnels grandes dimensions du retail park Plan-de-Campagne, automatismes interrupteurs sans-fil pour les commerces du Mazarin.",
-  "Notre atelier de fabrication, situe a moins de 30 minutes de {zone} dans la zone d'activite aixoise, produit des lames acier galvanise, aluminium thermolaque ou inox brosse en moins de 4 heures sur urgence. Cette capacite locale est rare en Pays d'Aix : la plupart des concurrents commandent aupres de grossistes nationaux avec des delais 48-72 h. Particulierement utile pour les bastides aixoises avec ouvertures non standard (linteaux cintres, largeurs > 4 m).",
-  "Toutes les interventions de {keyword} a {zone} sont couvertes par une garantie ferme : 2 ans sur les pieces neuves, 1 an sur la main-d'oeuvre, ecrites sur le devis et la facture. En cas de defaillance d'une piece dans la periode, DRM Aix-en-Provence reintervient gratuitement sans franchise ni deplacement supplementaire. Sur les contrats d'entretien annuels (commerces du Cours Mirabeau soumis a fermeture nocturne quotidienne), la garantie est tacitement renouvelee a chaque visite preventive.",
-  "DRM Aix-en-Provence allie la reactivite d'une entreprise aixoise et l'exigence technique d'un specialiste reconnu. Pour le {keyword} a {zone}, nous engageons un delai sous 30 minutes en horaires ouvrables (avantage de la rocade aixoise qui dessert Aix centre, Les Milles, Gardanne et Le Tholonet en moins de 20 min depuis notre depot), sous 1 heure en urgence nuit/week-end/jour ferie. Le devis annonce sur place est le prix paye, sans surcout deplacement cache pour les communes integrees au forfait.",
-  "Au-dela du materiel et de la garantie, ce qui differencie DRM Aix-en-Provence pour le {keyword} a {zone}, c'est la transparence aixoise. Nous expliquons chaque intervention : pourquoi cette piece d'origine, pourquoi cette teinte RAL compatible avec les facades calcaire du centre Aix, quelles alternatives moins couteuses existent et leurs limites. Les devis sont detailes ligne par ligne. Si un controle d'expertise est demande (assurance, copropriete des bastides), nous fournissons tous les justificatifs ecrits.",
-  "DRM Aix-en-Provence selectionne ses fournisseurs avec la meme exigence depuis 25 ans. Pour le {keyword} a {zone}, nous travaillons exclusivement avec des references homologuees : moteurs sous garantie constructeur (5 ans Somfy, 4 ans Simu, 3 ans ACM), lames acier galvanise norme EN 12424 anti-effraction classe RC2, serrures A2P niveau 2, automatismes conformes a la directive 2014/53/UE pour les commerces aixois. Inscrit noir sur blanc sur le devis : exigence rare chez les concurrents.",
-  "Le stockage des pieces de {keyword} fait la difference a {zone}. Notre depot du Pays d'Aix conserve en permanence : 5 generations de moteurs tubulaires Somfy (RS100, RS125, RS180, Oximo, Sonesse), 3 generations de moteurs centraux ACM (Titan classique, Titan Plus, Centris XXL), moteurs lateraux Sommer GIGAroll pour les sectionnels Avon, une vingtaine de references de serrures A2P, plus de 200 longueurs de lames pretes a couper. Resultat : 95 % des interventions terminees en une seule visite.",
-  "Le service apres-vente est aussi important que l'intervention elle-meme. DRM Aix-en-Provence tient un carnet d'historique pour chaque rideau metallique entretenu a {zone} (atelier d'artisan a Trets, restaurant a Saint-Cannat, bijouterie sur Cours Mirabeau). Chaque visite ajoute une ligne : date, geste effectue, piece changee, controle preventif. Ce suivi facilite la maintenance long terme et evite les double-interventions. Les clients sous contrat beneficient d'une consultation gratuite par telephone.",
-  "Faire appel a DRM Aix-en-Provence pour le {keyword} a {zone}, c'est aussi soutenir un acteur economique aixois. Nos techniciens sont tous salaries permanents, formes en interne et bases en Pays d'Aix (pas de sous-traitance, pas de rotation d'equipe tous les six mois). Nous travaillons avec des fournisseurs francais (Simu Yutz, Somfy Cluses) et europeens (ACM Vergiate Italie, Sommer Allemagne). Traceabilite garantie par un bordereau ecrit conserve cinq ans, exigible par tout assureur ou expert.",
+  "Sur le secteur de {zone}, DRM Aix-en-Provence mobilise un veritable atelier embarque. Chaque vehicule contient des lames pleines P57 (0,6 mm) et P90 (0,8 mm), des moteurs tubulaires Somfy RS100 et Simu T5, des moteurs centraux ACM Titan et Centris XXL, des ressorts de compensation, des coulisses standard, des serrures profil europeen 4 points. Cela couvre 90 % des interventions de {keyword} sans deplacement supplementaire.",
+  "Confier votre {keyword} a DRM Aix-en-Provence a {zone}, c'est miser sur un acteur local etabli depuis 25 ans. Nous travaillons avec les principales marques du marche (Somfy, Simu, Nice, ACM, Came, BFT, Sommer) en pieces d'origine. Nos techniciens sont formes regulierement aux nouveautes constructeurs : motorisations connectees, axes haute charge, automatismes domotique-compatibles.",
+  "Notre atelier de fabrication, situe a moins de 30 minutes de {zone}, nous permet de produire des lames et axes sur-mesure en moins de 4 heures pour les cas urgents. Cette capacite locale est rare sur le Pays d'Aix : la plupart des concurrents commandent les pieces aupres de grossistes nationaux avec des delais de 48 a 72 heures.",
+  "Toutes les interventions de {keyword} a {zone} sont couvertes par une garantie ferme : 2 ans sur les pieces neuves, 1 an sur la main-d'oeuvre. Cette garantie est trace au devis et a la facture. En cas de defaillance d'une piece dans la periode, DRM Aix-en-Provence reintervient gratuitement, sans franchise.",
+  "DRM Aix-en-Provence, c'est la reactivite d'une entreprise locale et la qualite d'un specialiste national. Pour votre {keyword} a {zone}, nous engageons un delai d'intervention sous 30 minutes en horaires ouvrables, sous 1 heure en horaires d'urgence (nuit, week-end, jours feries). Aucun forfait deplacement cache : le devis annonce sur place est le prix paye.",
+  "Au-dela du materiel et de la garantie, ce qui differencie DRM Aix-en-Provence pour votre {keyword} a {zone}, c'est la transparence. Nous expliquons chaque intervention au client : pourquoi cette piece, pourquoi ce prix, quelles alternatives. Les devis sont detailes ligne par ligne. Si un controle d'expertise est demande (assurance, copropriete), nous fournissons tous les justificatifs.",
+  "DRM Aix-en-Provence selectionne ses fournisseurs avec la meme exigence depuis 25 ans. Pour votre {keyword} a {zone}, nous travaillons exclusivement avec des references homologuees : moteurs sous garantie constructeur (5 ans Somfy, 4 ans Simu, 3 ans ACM), lames acier galvanise repondant a la norme EN 12424 (anti-effraction classe RC2), serrures certifiees A2P. Cette exigence est rarement explicite chez les concurrents : nous l'inscrivons noir sur blanc sur le devis.",
+  "Le stockage des pieces de {keyword} fait la difference a {zone}. Notre depot de le Pays d'Aix conserve en permanence 5 generations de moteurs tubulaires Somfy (RS100, RS125, RS180, Oximo, Sonesse), 3 generations de moteurs centraux ACM (Titan classique, Titan Plus, Centris XXL), une vingtaine de references de serrures et plus de 200 longueurs de lames pretes a couper. Resultat : 95 % des interventions terminees en une seule visite.",
+  "Le service apres-vente est aussi important que l'intervention elle-meme. DRM Aix-en-Provence tient un carnet d'historique pour chaque rideau metallique entretenu a {zone}. Chaque visite ajoute une ligne : date, geste effectue, piece changee, controle preventif. Ce suivi facilite la maintenance long terme et evite les double-interventions. Nos clients sous contrat d'entretien beneficient d'une consultation gratuite par telephone en cas de doute.",
+  "Faire appel a DRM Aix-en-Provence pour votre {keyword} a {zone}, c'est aussi soutenir un acteur economique local. Nos techniciens sont tous salaries permanents, formes en interne et bases sur le Pays d'Aix. Nous travaillons avec des fournisseurs francais (Simu, Somfy France) et europeens (ACM Italie), sans recours a des sous-traitants. La traceabilite de chaque intervention est garantie par un bordereau ecrit conserve cinq ans.",
+];
+
+const seo3TitleAngles: string[] = [
+  "Types de rideau metallique traites a {zone}",
+  "Tous formats de rideau metallique pris en charge a {zone}",
+  "Lames pleines, micro-perforees, grilles : nos specialites a {zone}",
+  "Rideau metallique a {zone} : formats commerce et industriel",
+  "{keyword} a {zone} : tous les types de tablier",
+  "Notre savoir-faire technique pour {zone}",
+  "Specificites techniques de votre {keyword} a {zone}",
+  "Du commerce au hangar : nos interventions a {zone}",
+];
+
+const seo3TextAngles: string[] = [
+  "A {zone}, DRM Aix-en-Provence intervient sur tous les formats de rideau metallique : lames pleines P57 (0,6 mm) pour commerces standards, lames P90 (0,8 mm) pour bijouteries et pharmacies, lames P140 double paroi pour entrepots et industriels. Notre catalogue couvre aussi les <strong>grilles cobra</strong> (tubes acier motif S, vision + securite), les grilles extensibles accordeon pour vitrines etroites, les lames micro-perforees aluminium pour conserver la visibilite, et les lames polycarbonates transparentes pour vitrines de luxe. Chaque type appelle un outillage et un savoir-faire specifique.",
+  "Votre {keyword} a {zone} implique une connaissance fine des composants : <strong>axe d'enroulement</strong> en tube acier 60-76 mm, ressorts de compensation calibres selon le poids du tablier, moteurs <strong>tubulaires</strong> (Somfy RS100, Simu T5, Nice Era) integres dans l'axe, ou moteurs <strong>centraux</strong> (ACM Titan, Raptor 76, Centris XXL) sur platine au-dessus du coffre. Les techniciens DRM Aix-en-Provence maitrisent les trois technologies et savent les diagnostiquer rapidement sur site.",
+  "Sur {zone}, nous intervenons sur les configurations les plus courantes : pose en applique (coffre visible exterieur), pose en linteau (coffre integre), pose imposte (sur ouverture en hauteur). Chaque configuration impose des contraintes specifiques de releve, de fabrication et de pose. Notre experience de plus de {interventions} interventions nous permet de proposer immediatement la solution adaptee a votre batiment, sans tatonnement.",
+  "Les rideaux metalliques modernes integrent des fonctions evoluees que DRM Aix-en-Provence maitrise a {zone} : <strong>automatismes connectes</strong> (TaHoma, IT4WIFI), <strong>boitiers debrayables</strong> pour ouverture manuelle en panne electrique, <strong>centrales de commande Masinara M-Plus</strong> pour rideaux multi-vantaux, dispositifs de securite anti-chute, photocellules, barre palpeuse de bord d'arrete. Tous ces dispositifs sont installes, controles et entretenus par notre equipe.",
+  "Au-dela des composants standards, DRM Aix-en-Provence peut produire et installer a {zone} des configurations sur-mesure : <strong>rideaux thermolaques couleur RAL</strong> (40 teintes standards), tabliers en <strong>aluminium thermolaque</strong> pour resistance aux humidite hivernale (essentiel sur le Pays d'Aix), <strong>inox brosse</strong> pour environnements de luxe, coffres anti-effraction Blindor ACM renforces. Devis sur-mesure sous 48 heures.",
+  "Le diagnostic technique a {zone} commence par identifier le type de rideau et la marque du moteur. Lames pleines acier ? Micro-perforees alu ? Grille cobra ? Motorisation tubulaire ou centrale ? Marque Somfy, Simu, ACM, Nice, Came, BFT, Sommer ? Cette identification preliminaire prend moins de 5 minutes a notre technicien et determine les pieces a embarquer et le temps d'intervention attendu. Sans cette etape, on s'expose a un retour pour piece manquante.",
+];
+
+const seo4TitleAngles: string[] = [
+  "Comment se preparer a un {keyword} a {zone}",
+  "Avant l'arrivee du technicien DRM a {zone}",
+  "Conseils pratiques avant intervention a {zone}",
+  "Les bons reflexes en cas de panne a {zone}",
+  "Optimiser votre {keyword} a {zone} : checklist",
+  "{keyword} a {zone} : ce que nous attendons du client",
+  "Reduire le temps d'intervention a {zone} : nos recommandations",
+];
+
+const seo4TextAngles: string[] = [
+  "Avant l'arrivee de notre technicien a {zone}, quelques reflexes accelerent l'intervention de {keyword} : 1) ne JAMAIS forcer le rideau a la main si le moteur ne repond plus (risque ressort/axe), 2) couper le disjoncteur dedie au rideau pour eviter un re-demarrage accidentel, 3) noter la marque du moteur si visible (Somfy, Simu, ACM, Nice), 4) photographier la position du blocage ou la lame deformee, 5) preparer l'acces au coffre (cartons, mobilier, vehicule a ecarter). Ces gestes font gagner 15 a 30 minutes sur place.",
+  "Pour un {keyword} reussi a {zone}, le rendez-vous est plus efficace si vous reunissez ces informations : <strong>age approximatif du rideau metallique</strong>, dernieres interventions connues (entretien, remplacement de piece), <strong>marque visible</strong> sur le moteur ou le boitier electrique, contexte d'apparition de la panne (choc, coupure de courant, usure progressive), <strong>plage horaire de votre commerce</strong> pour planifier l'intervention en minimisant la gene clients.",
+  "Lors d'un {keyword} a {zone}, notre technicien aura besoin d'acces : <strong>compteur electrique</strong> pour couper l'alimentation moteur, <strong>parking court</strong> pour le vehicule atelier (cones disponibles sur demande), <strong>cle de la serrure</strong> de lame finale si elle existe. Sur les commerces a vitrine etroite, prevoir la possibilite de bacher temporairement l'ouverture pendant la depose du tablier (15 a 60 min selon la nature de l'intervention).",
+  "Pour les interventions a {zone} programmees (installation neuve, motorisation, fabrication sur-mesure), DRM Aix-en-Provence organise une <strong>visite technique prealable gratuite</strong>. Le technicien mesure precisement l'ouverture (largeur, hauteur, profondeur du coffre), evalue les contraintes electriques (passage de cable, tableau electrique), photographie la facade et etablit un devis ferme sous 48 heures. Cette visite evite les mauvaises surprises a la pose.",
+  "Apres notre {keyword} a {zone}, vous recevez un <strong>dossier complet</strong> : facture detaillee (pieces, main-d'oeuvre, garantie), bordereau d'intervention signe (etat avant/apres, pieces remplacees), garantie ecrite 2 ans pieces / 1 an main-d'oeuvre. Pour les usages assurance ou expertise, nous etablissons gratuitement une attestation circonstanciee precisant le diagnostic, les gestes et le respect des normes (EN 12453 securite, NF C 15-100 electricite). Ce dossier est conserve cinq ans dans nos archives.",
+  "Pour les commerces et professionnels de {zone} qui veulent eviter les pannes recurrentes sur leur rideau metallique, DRM Aix-en-Provence propose un <strong>contrat d'entretien annuel</strong> : 2 a 4 visites par an avec graissage de l'axe, controle des ressorts, test electrique du moteur, lubrification de la serrure, verification du serrage des fixations. Resultat constate : <strong>60 % de pannes en moins</strong> chez nos clients sous contrat, et priorite d'intervention en cas d'urgence.",
 ];
 
 const typesIntroAngles: string[] = [
-  "A {zone}, le {keyword} concerne aussi bien les {commerce1} que les ateliers, hangars et entrepots du secteur. Selon le type de rideau (lames pleines, micro-perforees, grille cobra, polycarbonate) et la marque du moteur, l'approche technique varie : DRM Aix-en-Provence adapte ses interventions a chaque configuration rencontree sur la commune.",
+  "A {zone}, votre {keyword} concerne aussi bien les {commerce1} que les ateliers, hangars et entrepots du secteur. Selon le type de rideau (lames pleines, micro-perforees, grille cobra, polycarbonate) et la marque du moteur, l'approche technique varie : DRM Aix-en-Provence adapte ses interventions a chaque configuration rencontree sur la commune.",
   "Sur {zone}, nous distinguons cinq familles d'interventions en {keyword}. Chacune fait appel a un outillage specifique, un stock de pieces particulier et un temps d'intervention different. Notre experience accumulee sur {commerce1} et les ateliers du secteur nous permet de diagnostiquer la famille en quelques minutes.",
   "Les commerces de {zone} presentent des configurations tres variees pour leur rideau metallique : devantures etroites du centre ancien, vitrines larges des avenues commercantes, hangars industriels ou parkings techniques. DRM Aix-en-Provence adapte son materiel et ses gestes a chacun de ces cas, ce qui evite les surcouts et les retours.",
-  "Le {keyword} a {zone} ne s'improvise pas : selon la marque du moteur, l'age du tablier et le type de batiment, l'intervention peut durer de 30 minutes a une journee complete. Notre equipe etablit un diagnostic precis et chiffre le devis avant tout commencement, sans frais.",
-  "Sur le secteur {zone}, DRM Aix-en-Provence a traite plusieurs centaines de cas relevant du {keyword}. Cette experience nous permet de reconnaitre rapidement les configurations les plus frequentes et d'y repondre avec les bons outils, le bon materiel et le bon planning. Resultat : moins d'aller-retour, moins de couts caches, plus de fiabilite.",
+  "Votre {keyword} a {zone} ne s'improvise pas : selon la marque du moteur, l'age du tablier et le type de batiment, l'intervention peut durer de 30 minutes a une journee complete. Notre equipe etablit un diagnostic precis et chiffre le devis avant tout commencement, sans frais.",
+  "Sur le secteur {zone}, DRM Aix-en-Provence a traite plusieurs centaines de cas relevant de votre {keyword}. Cette experience nous permet de reconnaitre rapidement les configurations les plus frequentes et d'y repondre avec les bons outils, le bon materiel et le bon planning. Resultat : moins d'aller-retour, moins de couts caches, plus de fiabilite.",
   "Que le rideau metallique de {zone} soit motorise ou manuel, recent ou ancien, neuf ou repare plusieurs fois, DRM Aix-en-Provence dispose d'une approche {keyword} adaptee. Notre stock couvre les principales marques et les principaux formats : ce qui permet de proposer un devis precis et un delai realiste des le premier rendez-vous.",
 ];
 
 const whyUsAngles: string[] = [
-  "DRM Aix-en-Provence combine experience longue (25 ans), atelier de fabrication local, vehicules atelier completement equipes et garantie ferme 2 ans pieces / 1 an main-d'oeuvre. Pour le {keyword} a {zone}, cette combinaison est rare en Pays d'Aix. Nous traitons aussi bien les urgences (rideau bloque a la fermeture, panne moteur le dimanche soir) que les chantiers programmes (installation neuve, motorisation d'une fermeture manuelle, contrat d'entretien annuel).",
-  "Trois raisons principales de confier votre {keyword} a {zone} a DRM Aix-en-Provence : 1) un atelier de fabrication en Pays d'Aix qui nous rend autonomes en pieces sur-mesure, 2) une equipe de techniciens permanents formes a toutes les marques majeures, 3) une politique de devis ferme sans surprise et une garantie 2 ans ecrite. Ces trois elements sont rarement reunis chez les concurrents.",
-  "DRM Aix-en-Provence a fait du {keyword} a {zone} l'une de ses specialites principales. Nous y intervenons plusieurs fois par semaine, sur des configurations tres variees : commerces de centre-ville, ateliers d'artisans, hangars logistiques, parkings prives. Cette densite d'experience nous permet de proposer des solutions eprouvees plutot que des bricolages improvises.",
-  "Pour le {keyword} a {zone}, DRM Aix-en-Provence s'engage par ecrit sur trois points : delai d'intervention (30 min ouvrables, 60 min urgence), devis ferme sans frais caches, garantie 2 ans pieces / 1 an main-d'oeuvre. Cet engagement contractuel est notre signature commerciale : il differencie DRM Aix-en-Provence des intervenants ponctuels et rassure les commerces qui en sont a leur premier rideau metallique.",
+  "DRM Aix-en-Provence combine experience longue (25 ans), atelier de fabrication local, vehicules atelier completement equipes et garantie ferme 2 ans pieces / 1 an main-d'oeuvre. Pour votre {keyword} a {zone}, cette combinaison est rare sur le Pays d'Aix. Nous traitons aussi bien les urgences (rideau bloque a la fermeture, panne moteur le dimanche soir) que les chantiers programmes (installation neuve, motorisation d'une fermeture manuelle, contrat d'entretien annuel).",
+  "Trois raisons principales de confier votre {keyword} a {zone} a DRM Aix-en-Provence : 1) un atelier de fabrication sur le Pays d'Aix qui nous rend autonomes en pieces sur-mesure, 2) une equipe de techniciens permanents formes a toutes les marques majeures, 3) une politique de devis ferme sans surprise et une garantie 2 ans ecrite. Ces trois elements sont rarement reunis chez les concurrents.",
+  "DRM Aix-en-Provence a fait de votre {keyword} a {zone} l'une de ses specialites principales. Nous y intervenons plusieurs fois par semaine, sur des configurations tres variees : commerces de centre-ville, ateliers d'artisans, hangars logistiques, parkings prives. Cette densite d'experience nous permet de proposer des solutions eprouvees plutot que des bricolages improvises.",
+  "Pour votre {keyword} a {zone}, DRM Aix-en-Provence s'engage par ecrit sur trois points : delai d'intervention (30 min ouvrables, 60 min urgence), devis ferme sans frais caches, garantie 2 ans pieces / 1 an main-d'oeuvre. Cet engagement contractuel est notre signature commerciale : il differencie DRM Aix-en-Provence des intervenants ponctuels et rassure les commerces qui en sont a leur premier rideau metallique.",
   "Choisir DRM Aix-en-Provence pour votre {keyword} a {zone}, c'est choisir la continuite. Le technicien qui pose votre rideau aujourd'hui sera disponible demain pour le depanner, l'entretenir ou le motoriser. Cette logique de proximite est rare dans le metier ou la sous-traitance est devenue majoritaire. Chez DRM Aix-en-Provence, l'equipe est salariee, formee en interne et durable.",
-  "DRM Aix-en-Provence tient une promesse claire pour le {keyword} a {zone} : pas de devis flou, pas de pieces non agreees, pas de garantie verbale. Tout est ecrit, signe, conserve. Cette discipline a un cout administratif que nous absorbons, mais elle se traduit pour le client par une qualite constante et la possibilite de faire jouer la garantie sans discussion.",
+  "DRM Aix-en-Provence tient une promesse claire pour votre {keyword} a {zone} : pas de devis flou, pas de pieces non agreees, pas de garantie verbale. Tout est ecrit, signe, conserve. Cette discipline a un cout administratif que nous absorbons, mais elle se traduit pour le client par une qualite constante et la possibilite de faire jouer la garantie sans discussion.",
 ];
 
 const localExpertiseAngles: string[] = [
   "{specifique} Nous y intervenons regulierement, notamment sur {street1}, {street2}, autour de {landmark1} et dans le quartier {quartier1}. Cette connaissance du terrain {zone} fait gagner du temps : nos techniciens identifient rapidement les contraintes d'acces, les horaires de circulation et les particularites architecturales locales. Resultat : un {keyword} plus rapide, mieux adapte aux exigences de votre commerce ou de votre site, avec une logistique de pieces optimisee.",
   "{specifique} DRM Aix-en-Provence a une cartographie precise du secteur {zone} : ou se trouvent les commerces sensibles ({commerce1}), quels axes sont congestionnes aux heures de pointe, quelle est la voie d'acces la plus courte selon le quartier ({quartier1}, {quartier2}). Cette intelligence terrain rend chaque {keyword} plus rapide et plus efficient.",
   "Le caractere local de DRM Aix-en-Provence est essentiel pour un bon {keyword} a {zone}. {specifique} Nous connaissons les particularites architecturales du quartier {quartier1} et des rues commercantes ({street1}, {street2}), les contraintes des reglementations communales, et les habitudes des commercants locaux ({commerce1}). Ce contexte change la nature meme de l'intervention.",
-  "Intervenir sur le {keyword} a {zone} implique de connaitre le terrain. DRM Aix-en-Provence s'est implante depuis longtemps sur ce secteur. {specifique} Nos techniciens citent par habitude {landmark1} ou {street1} : c'est cette familiarite qui rassure les commercants et fluidifie chaque intervention.",
-  "{specifique} A {zone} comme dans tout le Pays d'Aix, DRM Aix-en-Provence ajoute a son expertise technique une connaissance fine du contexte local : commerces dominants ({commerce1}), reglementations specifiques, profil meteo (mistral, mistral et soleil). Cette synthese permet de proposer un {keyword} mieux adapte qu'un intervenant national parachute.",
-  "Notre travail sur {zone} pour le {keyword} est nourri par des centaines d'interventions accumulees sur la commune. {specifique} Cette experience cumulee, indissociable du terrain, nous permet de prevoir les difficultes et d'eviter les pieges. Resultat : un travail plus fiable, plus rapide et moins couteux pour le client final autour de {street1} et {street2}.",
+  "Intervenir sur votre {keyword} a {zone} implique de connaitre le terrain. DRM Aix-en-Provence s'est implante depuis longtemps sur ce secteur. {specifique} Nos techniciens citent par habitude {landmark1} ou {street1} : c'est cette familiarite qui rassure les commercants et fluidifie chaque intervention.",
+  "{specifique} A {zone} comme dans toute le Pays d'Aix, DRM Aix-en-Provence ajoute a son expertise technique une connaissance fine du contexte local : commerces dominants ({commerce1}), reglementations specifiques, profil meteo (vent aixois, humidite hivernale). Cette synthese permet de proposer un {keyword} mieux adapte qu'un intervenant national parachute.",
+  "Notre travail sur {zone} pour votre {keyword} est nourri par des centaines d'interventions accumulees sur la commune. {specifique} Cette experience cumulee, indissociable du terrain, nous permet de prevoir les difficultes et d'eviter les pieges. Resultat : un travail plus fiable, plus rapide et moins couteux pour le client final autour de {street1} et {street2}.",
 ];
 
 const ctaTitleAngles: string[] = [
@@ -282,9 +325,9 @@ const faqBanks: FaqVariants[] = [
       "Quelle entreprise pour {verb} un rideau metallique a {zone} ?",
     ],
     a: [
-      "DRM Aix-en-Provence est le specialiste du {keyword} sur {zone} ({postal}) et l'ensemble du Pays d'Aix. Notre equipe intervient 24h/24, 7j/7, avec un atelier de fabrication a moins de 30 minutes. Demandez votre devis via notre formulaire ou contactez-nous : intervention possible le jour meme dans la plupart des cas.",
+      "DRM Aix-en-Provence est le specialiste de votre {keyword} sur {zone} ({postal}) et l'ensemble de le Pays d'Aix. Notre equipe intervient 24h/24, 7j/7, avec un atelier de fabrication a moins de 30 minutes. Demandez votre devis via notre formulaire ou contactez-nous : intervention possible le jour meme dans la plupart des cas.",
       "Pour un {keyword} a {zone}, faites appel a DRM Aix-en-Provence. Notre permanence couvre le Pays d'Aix depuis 25 ans, avec une equipe salariee en interne et un stock de pieces strategique. Reponse a votre demande sous 1 heure en horaires ouvrables.",
-      "DRM Aix-en-Provence est l'acteur historique du {keyword} a {zone}. Une demande passe par notre formulaire, un technicien vous rappelle pour un pre-diagnostic, l'intervention est planifiee sous 24 a 48 heures (sous 30 minutes en urgence). Devis ferme avant toute action.",
+      "DRM Aix-en-Provence est l'acteur historique de votre {keyword} a {zone}. Une demande passe par notre formulaire, un technicien vous rappelle pour un pre-diagnostic, l'intervention est planifiee sous 24 a 48 heures (sous 30 minutes en urgence). Devis ferme avant toute action.",
     ],
   },
   {
@@ -295,7 +338,7 @@ const faqBanks: FaqVariants[] = [
     ],
     a: [
       "En horaires ouvrables, le delai d'intervention sur {zone} est en moyenne de 30 a 60 minutes. En urgence nuit / week-end / jour ferie, nous engageons un delai sous 1 heure. La pose neuve et la fabrication sur-mesure se planifient sous 5 a 10 jours selon les dimensions.",
-      "Le delai DRM Aix-en-Provence pour le {keyword} a {zone} est garanti par ecrit : 30 minutes en horaires ouvrables, 1 heure en urgence. Pour une installation neuve, le delai moyen est de 7 jours ouvres (releve technique compris). Pour une fabrication sur-mesure express, comptez 4 heures.",
+      "Le delai DRM Aix-en-Provence pour votre {keyword} a {zone} est garanti par ecrit : 30 minutes en horaires ouvrables, 1 heure en urgence. Pour une installation neuve, le delai moyen est de 7 jours ouvres (releve technique compris). Pour une fabrication sur-mesure express, comptez 4 heures.",
       "DRM Aix-en-Provence organise son planning pour intervenir tres rapidement a {zone}. En cas d'urgence rideau bloque, nous engageons un delai sous 60 minutes 24h/24. Pour un chantier neuf ou une motorisation, le rendez-vous initial est pris sous 48 heures, l'execution sous 5 a 10 jours.",
     ],
   },
@@ -308,7 +351,7 @@ const faqBanks: FaqVariants[] = [
     a: [
       "Le prix d'un {keyword} a {zone} depend du type de rideau, de la marque du moteur, des pieces a remplacer et de l'horaire. A titre indicatif : deblocage simple a partir de 149 euros, reparation moteur a partir de 390 euros, remplacement de lames a partir de 189 euros. Le devis precis est etabli sur place, avant intervention, sans engagement.",
       "Pour un {keyword} a {zone}, les tarifs DRM Aix-en-Provence sont annonces avant intervention, sans surprise. La fourchette varie selon la complexite : 149-350 euros pour un deblocage standard, 390-800 euros pour une reparation moteur, 500-1500 euros pour une motorisation complete, 800-5000 euros pour une installation neuve. Le devis ferme valide ces montants avant toute action.",
-      "Les prix DRM Aix-en-Provence pour le {keyword} a {zone} sont structures par fourchette : intervention simple (moins de 60 min) a partir de 149 euros, intervention moyenne (60 a 180 min) entre 300 et 800 euros, intervention lourde (renovation, pose neuve) au-dela. Le devis sur place precise tout, sans frais de deplacement separes.",
+      "Les prix DRM Aix-en-Provence pour votre {keyword} a {zone} sont structures par fourchette : intervention simple (moins de 60 min) a partir de 149 euros, intervention moyenne (60 a 180 min) entre 300 et 800 euros, intervention lourde (renovation, pose neuve) au-dela. Le devis sur place precise tout, sans frais de deplacement separes.",
     ],
   },
   {
@@ -318,9 +361,9 @@ const faqBanks: FaqVariants[] = [
       "Avec quels constructeurs DRM Aix-en-Provence travaille-t-il pour {zone} ?",
     ],
     a: [
-      "Oui, nos techniciens travaillent avec les principales marques du marche : Somfy, Simu, Nice, ACM, Came, BFT, Sommer, Masinara, Gaposa. Pour le {keyword} a {zone}, nous disposons en stock des pieces compatibles avec ces marques (moteurs tubulaires, moteurs centraux, ressorts, lames, serrures).",
+      "Oui, nos techniciens travaillent avec les principales marques du marche : Somfy, Simu, Nice, ACM, Came, BFT, Sommer, Masinara, Gaposa. Pour votre {keyword} a {zone}, nous disposons en stock des pieces compatibles avec ces marques (moteurs tubulaires, moteurs centraux, ressorts, lames, serrures).",
       "DRM Aix-en-Provence est multimarque sur {zone}. Notre depot couvre Somfy (tubulaires), Simu (tubulaires), Nice (Era, Big Era), ACM (Titan, Raptor 76, Centris XXL), Came (axes industriels), BFT, Sommer (lateral GIGAroll). Nous appliquons les preconisations constructeurs et preservons la garantie d'origine.",
-      "Notre equipe est formee aux references suivantes pour le {keyword} a {zone} : moteurs tubulaires Somfy RS100/RS125/RS180/Oximo/Sonesse, moteurs Simu T5/T8, moteurs ACM Titan/Centris XXL, moteurs Came/BFT industriels, moteurs lateraux Sommer. Nous proposons aussi les automatismes Nice Era pour les telecommandes.",
+      "Notre equipe est formee aux references suivantes pour votre {keyword} a {zone} : moteurs tubulaires Somfy RS100/RS125/RS180/Oximo/Sonesse, moteurs Simu T5/T8, moteurs ACM Titan/Centris XXL, moteurs Came/BFT industriels, moteurs lateraux Sommer. Nous proposons aussi les automatismes Nice Era pour les telecommandes.",
     ],
   },
   {
@@ -332,7 +375,7 @@ const faqBanks: FaqVariants[] = [
     a: [
       "Toutes les interventions de {keyword} a {zone} sont couvertes par une garantie 2 ans sur les pieces neuves et 1 an sur la main-d'oeuvre. La garantie est trace au devis et a la facture. En cas de defaillance d'une piece dans la periode, DRM Aix-en-Provence reintervient gratuitement.",
       "La garantie DRM Aix-en-Provence sur {keyword} a {zone} est ecrite : 2 ans pieces, 1 an main-d'oeuvre, sans franchise. Elle couvre la defaillance prematuree d'une piece neuve, le defaut d'installation d'un composant pose par notre equipe, le mauvais reglage d'un automatisme. Elle ne couvre pas l'usure normale ou les degradations accidentelles ulterieures.",
-      "Pour le {keyword} a {zone}, DRM Aix-en-Provence applique la garantie suivante : 24 mois sur les pieces neuves fournies, 12 mois sur la main-d'oeuvre de pose. La garantie joue sans franchise : en cas de defaillance, nous intervenons gratuitement (deplacement compris). Les pieces de reemploi (occasion) ne sont garanties que 6 mois.",
+      "Pour votre {keyword} a {zone}, DRM Aix-en-Provence applique la garantie suivante : 24 mois sur les pieces neuves fournies, 12 mois sur la main-d'oeuvre de pose. La garantie joue sans franchise : en cas de defaillance, nous intervenons gratuitement (deplacement compris). Les pieces de reemploi (occasion) ne sont garanties que 6 mois.",
     ],
   },
   {
@@ -354,9 +397,9 @@ const faqBanks: FaqVariants[] = [
       "Quel mode de paiement accepte DRM Aix-en-Provence a {zone} ?",
     ],
     a: [
-      "Pour le {keyword} a {zone}, DRM Aix-en-Provence ne demande aucun acompte sur les interventions de moins de 1000 euros. Pour les chantiers superieurs (installation neuve, motorisation complete), un acompte de 30 % est demande a la signature du devis. Paiement par carte, virement ou cheque, facture etablie le jour meme.",
+      "Pour votre {keyword} a {zone}, DRM Aix-en-Provence ne demande aucun acompte sur les interventions de moins de 1000 euros. Pour les chantiers superieurs (installation neuve, motorisation complete), un acompte de 30 % est demande a la signature du devis. Paiement par carte, virement ou cheque, facture etablie le jour meme.",
       "Aucun acompte n'est exige pour un {keyword} simple a {zone} (depannage, reparation, deblocage). Vous reglez sur place ou sous 7 jours. Pour les chantiers >1000 euros, l'acompte 30 % securise la commande de pieces sur-mesure et le planning. DRM Aix-en-Provence accepte CB, virement et cheque, ainsi que les commandes administratives (BAT, mandat) pour les administrations.",
-      "DRM Aix-en-Provence applique pour le {keyword} a {zone} une politique de paiement souple : rien a l'avance pour les interventions courantes, 30 % d'acompte pour les chantiers >1000 euros, solde a la fin. Nous acceptons la carte bancaire, le virement, le cheque et le paiement administratif (mandat ou BAT). Facture remise immediatement.",
+      "DRM Aix-en-Provence applique pour votre {keyword} a {zone} une politique de paiement souple : rien a l'avance pour les interventions courantes, 30 % d'acompte pour les chantiers >1000 euros, solde a la fin. Nous acceptons la carte bancaire, le virement, le cheque et le paiement administratif (mandat ou BAT). Facture remise immediatement.",
     ],
   },
   {
@@ -367,14 +410,35 @@ const faqBanks: FaqVariants[] = [
     ],
     a: [
       "Apres tout {keyword} a {zone}, DRM Aix-en-Provence remet une facture detaillee (pieces, main-d'oeuvre, garantie) plus, sur demande, une attestation d'intervention destinee a l'assurance. Cette attestation precise la nature de la panne ou du chantier, les pieces remplacees et la conformite aux normes. Elle est utile en cas de sinistre, expertise ou litige.",
-      "Pour le {keyword} a {zone}, vous recevez systematiquement une facture nominative (cachet entreprise, SIRET, montant HT/TTC) et un bordereau d'intervention signé. Sur simple demande, nous etablissons une attestation pour l'assurance ou la copropriete, gratuitement. Ce document precise l'etat avant intervention, les gestes effectues et la conformite aux normes en vigueur.",
+      "Pour votre {keyword} a {zone}, vous recevez systematiquement une facture nominative (cachet entreprise, SIRET, montant HT/TTC) et un bordereau d'intervention signé. Sur simple demande, nous etablissons une attestation pour l'assurance ou la copropriete, gratuitement. Ce document precise l'etat avant intervention, les gestes effectues et la conformite aux normes en vigueur.",
       "DRM Aix-en-Provence remet apres chaque {keyword} a {zone} un dossier complet : facture, bordereau d'intervention, garantie ecrite. Pour les usages assurance ou expertise, nous etablissons aussi sur demande une attestation circonstanciee (gratuite) detaillant le diagnostic, les pieces remplacees et le respect des normes (EN 12453 pour la securite, NF C 15-100 pour l'electricite).",
     ],
   },
 ];
 
 function pickIdx<T>(arr: T[], seed: number, offset = 0): T {
-  return arr[(seed + offset) % arr.length];
+  // Mix avec un prime different par offset = decorrelation des banks
+  // (evite que 2 zones se croisent sur tous les blocs en meme temps)
+  const PRIMES = [9176, 16127, 22147, 28403, 33391, 41597, 48619, 55733, 63247, 70687];
+  const prime = PRIMES[offset % PRIMES.length];
+  return arr[Math.abs(seed * prime + offset * 7919) % arr.length];
+}
+
+// Genere une variante "miroir" de l'angle texte en inversant l'ordre des phrases.
+// Double le pool effectif de chaque bank sans ecriture supplementaire.
+function mirrorAngle(text: string): string {
+  const sentences = text.split(/(?<=[.!?])\s+(?=[A-Z])/);
+  if (sentences.length < 2) return text;
+  return sentences.reverse().join(" ");
+}
+
+// Pour les blocs texte : choisit angle direct ou miroir selon parite du seed.
+// Effectivement double le nombre d'angles distincts dans la collection.
+function pickAngleVariant(arr: string[], seed: number, offset: number): string {
+  const idx = Math.abs(seed * 13 + offset * 17) % (arr.length * 2);
+  const baseIdx = Math.floor(idx / 2);
+  const mirror = idx % 2 === 1;
+  return mirror ? mirrorAngle(arr[baseIdx]) : arr[baseIdx];
 }
 
 function fillTokens(text: string, tokens: Record<string, string>): string {
@@ -382,6 +446,78 @@ function fillTokens(text: string, tokens: Record<string, string>): string {
     (out, [k, v]) => out.split(`{${k}}`).join(v),
     text,
   );
+}
+
+// Fragments hyper-locaux uniques par zone × bloc.
+// Chaque zone a 3-5 streets/landmarks/quartiers/commerces dans zone-local-data.ts.
+// Ces fragments les recombinent en phrases differentes par bloc, garantissant
+// que meme si 2 zones piquent le meme angle, le suffixe local diverge.
+const localTouchTemplates: string[] = [
+  " Sur place, nos techniciens connaissent les contraintes d'acces de {street1} et la circulation autour de {landmark1}, ce qui evite les pertes de temps habituelles.",
+  " Notre experience du quartier {quartier1} et des commerces de type {commerce1} nous donne une longueur d'avance sur le diagnostic et les pieces a embarquer.",
+  " Les commerces situes pres de {landmark2} et le long de {street2} font partie des interventions les plus frequentes pour notre equipe locale.",
+  " A {quartier2}, nos vehicules atelier sont souvent stationnes a moins de 5 minutes, ce qui reduit drastiquement le delai d'intervention par rapport a un depanneur generaliste.",
+  " Le contexte {commerce1} de {street1} demande une approche particuliere que nous avons rodee au fil de centaines d'interventions sur le secteur.",
+  " Notre tournee passe regulierement par {landmark1}, {street1} et {quartier1}, ce qui nous donne une connaissance fine du tissu commercial autour de votre adresse.",
+  " Nous arrivons en general par {street2} et nous stationnons a proximite immediate de {landmark1}, ce qui evite les soucis de parking habituels.",
+  " Le secteur {quartier1} avec ses {commerce1} represente l'essentiel de notre activite courante a {zone}, autant en frequence qu'en variete de cas.",
+  " Pour les commerces de {street1} pres de {landmark2}, nous avons identifie les pannes recurrentes et les pieces de rechange a stocker en priorite.",
+  " Notre familiarite avec les batiments du {quartier2} (souvent anciens, parfois classes) explique pourquoi les commerces locaux nous recommandent regulierement entre eux.",
+  " Le passage par {landmark1} fait partie du quotidien de notre equipe, qu'il s'agisse d'une urgence sur {street2} ou d'une visite d'entretien en {quartier1}.",
+  " Les {commerce1} de {zone} apprecient particulierement notre delai d'intervention sur {street1}, mesure et garanti contractuellement.",
+];
+
+// Phrase complementaire (corpus distinct) pour double-injection sans repetition de tournure.
+const localContextTemplates: string[] = [
+  " Cette dimension locale fait souvent la difference avec un intervenant national parachute, surtout pour les pannes nocturnes ou les jours feries.",
+  " Notre numero direct et notre planning local nous permettent de tenir le delai annonce, meme aux heures les plus chargees autour de {landmark1}.",
+  " Les commercants de {quartier1} savent qu'ils peuvent compter sur DRM Aix-en-Provence pour ne pas mobiliser leur boutique plus longtemps que necessaire.",
+  " Nous appliquons sur {zone} les memes standards qualite que sur les grandes agglomerations voisines, sans surcout ni delai allonge.",
+  " La proximite avec {landmark2} reduit considerablement notre temps d'acces, particulierement en heures pleines aux abords de {street1}.",
+  " Nos clients reguliers sur {zone} beneficient d'un suivi historique : on retrouve immediatement les pieces deja installees et les reglages effectues.",
+  " Sur ce secteur, nous croisons plusieurs collegues du batiment ({commerce1}, electriciens, serruriers) avec qui nous coordonnons les interventions complexes.",
+  " Cette continuite de presence sur {zone} explique pourquoi notre taux de fidelisation depasse 70 % sur les commerces du {quartier1}.",
+  " Les artisans installes sur {street1} ou autour de {landmark1} retrouvent les memes techniciens d'une intervention a l'autre, ce qui fluidifie les diagnostics.",
+  " Nous adaptons notre stock embarque a la saisonnalite de {zone} : plus de pieces moteur en hiver (humidite), plus de lames et serrures en ete (chaleur, dilatation).",
+  " Sur le perimetre {quartier2} - {street2}, nous tenons un historique des interventions qui sert de base de connaissance interne.",
+  " Pres de {landmark2}, le bati commercial est specifique : nous adaptons notre approche aux contraintes d'acces et de stationnement.",
+];
+
+function pickLocalTouch(
+  seed: number,
+  offset: number,
+  tokens: Record<string, string>,
+): string {
+  const tpl = pickIdx(localTouchTemplates, seed, offset);
+  return fillTokens(tpl, tokens);
+}
+
+function pickLocalContext(
+  seed: number,
+  offset: number,
+  tokens: Record<string, string>,
+): string {
+  const tpl = pickIdx(localContextTemplates, seed, offset);
+  return fillTokens(tpl, tokens);
+}
+
+// Re-arrange les phrases d'un angle selon le seed pour creer une variante textuelle
+// supplementaire (meme idees, ordre different = jaccard 5-shingle different).
+function reshuffleSentences(text: string, seed: number, offset: number): string {
+  const sentences = text.split(/(?<=[.!?])\s+(?=[A-Z])/);
+  if (sentences.length < 3) return text;
+  // PRNG mulberry32 pour shuffle stable
+  let s = (seed * 1657 + offset * 991) >>> 0;
+  const arr = [...sentences];
+  for (let i = arr.length - 1; i > 0; i--) {
+    s = (s + 0x6D2B79F5) | 0;
+    let t = Math.imul(s ^ (s >>> 15), 1 | s);
+    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+    const r = ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+    const j = Math.floor(r * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr.join(" ");
 }
 
 export function buildServiceZoneContent(
@@ -411,15 +547,54 @@ export function buildServiceZoneContent(
   };
 
   const introTitle = fillTokens(pickIdx(introTitleAngles, seed, 1), tokens);
-  const introText = fillTokens(pickIdx(introTextAngles, seed, 3), tokens);
-  const typesIntro = fillTokens(pickIdx(typesIntroAngles, seed, 5), tokens);
+  const introText =
+    fillTokens(pickAngleVariant(introTextAngles, seed, 3), tokens) +
+    pickLocalTouch(seed, 50, tokens) +
+    pickLocalContext(seed, 60, tokens);
+  const typesIntro =
+    fillTokens(pickAngleVariant(typesIntroAngles, seed, 5), tokens) +
+    pickLocalTouch(seed, 51, tokens);
   const seo1Title = fillTokens(pickIdx(seo1TitleAngles, seed, 7), tokens);
-  const seo1Text = fillTokens(pickIdx(seo1TextAngles, seed, 11), tokens);
+  const seo1Text = reshuffleSentences(
+    fillTokens(pickAngleVariant(seo1TextAngles, seed, 11), tokens) +
+      pickLocalTouch(seed, 52, tokens) +
+      pickLocalContext(seed, 61, tokens),
+    seed,
+    70,
+  );
   const seo2Title = fillTokens(pickIdx(seo2TitleAngles, seed, 13), tokens);
-  const seo2Text = fillTokens(pickIdx(seo2TextAngles, seed, 17), tokens);
-  const localExpertiseText = fillTokens(pickIdx(localExpertiseAngles, seed, 19), tokens);
-  const whyUsText = fillTokens(pickIdx(whyUsAngles, seed, 23), tokens);
-  const ctaTitle = fillTokens(pickIdx(ctaTitleAngles, seed, 29), tokens);
+  const seo2Text = reshuffleSentences(
+    fillTokens(pickAngleVariant(seo2TextAngles, seed, 17), tokens) +
+      pickLocalTouch(seed, 53, tokens) +
+      pickLocalContext(seed, 62, tokens),
+    seed,
+    71,
+  );
+  const seo3Title = fillTokens(pickIdx(seo3TitleAngles, seed, 19), tokens);
+  const seo3Text = reshuffleSentences(
+    fillTokens(pickAngleVariant(seo3TextAngles, seed, 23), tokens) +
+      pickLocalTouch(seed, 54, tokens) +
+      pickLocalContext(seed, 63, tokens),
+    seed,
+    72,
+  );
+  const seo4Title = fillTokens(pickIdx(seo4TitleAngles, seed, 29), tokens);
+  const seo4Text = reshuffleSentences(
+    fillTokens(pickAngleVariant(seo4TextAngles, seed, 31), tokens) +
+      pickLocalTouch(seed, 55, tokens) +
+      pickLocalContext(seed, 64, tokens),
+    seed,
+    73,
+  );
+  const localExpertiseText =
+    fillTokens(pickAngleVariant(localExpertiseAngles, seed, 41), tokens) +
+    pickLocalTouch(seed, 56, tokens) +
+    pickLocalContext(seed, 65, tokens);
+  const whyUsText =
+    fillTokens(pickAngleVariant(whyUsAngles, seed, 43), tokens) +
+    pickLocalTouch(seed, 57, tokens) +
+    pickLocalContext(seed, 66, tokens);
+  const ctaTitle = fillTokens(pickIdx(ctaTitleAngles, seed, 47), tokens);
 
   const localExpertiseTitle = `Notre experience du ${word.keyword} a ${zoneName}`;
   const whyUsTitle = `Pourquoi choisir DRM Aix-en-Provence pour votre ${word.keyword} a ${zoneName}`;
@@ -436,7 +611,9 @@ export function buildServiceZoneContent(
     // Force "Qui appeler..." variant on the first question (bank 0) per DRM skill rule #8
     const qIdx = idx === 0 && i === 0 ? 0 : (seed + 31 + i * 3);
     const q = fillTokens(pickIdx(bank.q, qIdx, 0), tokens);
-    const a = fillTokens(pickIdx(bank.a, seed, 37 + i * 5), tokens);
+    const aBase = fillTokens(pickIdx(bank.a, seed, 37 + i * 5), tokens);
+    // Inject local touch differente par FAQ pour casser le duplicate cross-zones
+    const a = aBase + pickLocalContext(seed, 80 + i * 11, tokens);
     return { question: q, answer: a };
   });
 
@@ -448,6 +625,10 @@ export function buildServiceZoneContent(
     seo1Text,
     seo2Title,
     seo2Text,
+    seo3Title,
+    seo3Text,
+    seo4Title,
+    seo4Text,
     localExpertiseTitle,
     localExpertiseText,
     whyUsTitle,

@@ -52,17 +52,17 @@ export default function ContactPage() {
               </div>
 
               <div className="flex flex-col gap-6">
-                <div className="bg-[#fbfbfb] rounded-[20px] p-6 lg:p-8">
+                <div className="bg-[#fbfbfb] rounded-[24px] p-6 lg:p-8">
                   <h3 className="h2-sm mb-4">Adresse de l&apos;atelier</h3>
                   <p className="text-[15px] text-[#050505]/70 leading-[1.55]">{siteConfig.address}</p>
                   <p className="text-[14px] text-[#050505]/55 mt-3">Couvre Aix centre, Mazarin, Vieil-Aix, Sextius-Mirabeau, Les Milles, Gardanne, Le Tholonet, Puyricard, et tout le Pays d&apos;Aix.</p>
                 </div>
-                <div className="bg-[#fbfbfb] rounded-[20px] p-6 lg:p-8">
+                <div className="bg-[#fbfbfb] rounded-[24px] p-6 lg:p-8">
                   <h3 className="h2-sm mb-4">Email</h3>
                   <a href={`mailto:${siteConfig.email}`} className="text-[15px] text-[#C28840] font-semibold hover:underline break-all">{siteConfig.email}</a>
                   <p className="text-[14px] text-[#050505]/55 mt-3">Reponse sous 24h en jours ouvres.</p>
                 </div>
-                <div className="bg-[#050505] text-white rounded-[20px] p-6 lg:p-8">
+                <div className="bg-[#050505] text-white rounded-[24px] p-6 lg:p-8">
                   <h3 className="h2-sm text-white mb-4">Horaires</h3>
                   <p className="text-[15px] text-white/75 leading-[1.55]">{siteConfig.openingHours}</p>
                   <p className="text-[14px] text-white/55 mt-3">Intervention sous {siteConfig.delai} min en horaires ouvrables. Sous 1h pour les urgences nuit/weekend/jour ferie.</p>

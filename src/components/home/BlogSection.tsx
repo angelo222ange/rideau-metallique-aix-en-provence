@@ -24,7 +24,7 @@ export default function BlogSection() {
             <Link
               key={post.title}
               href={post.href}
-              className="group block rounded-[20px] overflow-hidden bg-white border border-[rgba(5,5,5,0.06)] hover:shadow-lg transition"
+              className="group block rounded-[24px] overflow-hidden bg-white border border-[rgba(5,5,5,0.06)] hover:shadow-lg transition"
             >
               <div className="relative aspect-[16/11] overflow-hidden">
                 <Image

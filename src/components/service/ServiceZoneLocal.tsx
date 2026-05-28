@@ -23,7 +23,7 @@ export default function ServiceZoneLocal({
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-6">
-          <div className="bg-white/5 border border-white/10 rounded-[20px] p-6">
+          <div className="bg-white/5 border border-white/10 rounded-[24px] p-6">
             <h3 className="h2-sm text-white mb-4">Rues desservies</h3>
             <ul className="flex flex-col gap-2 text-[14px] text-white/75">
               {local.streets.map((s) => (
@@ -35,7 +35,7 @@ export default function ServiceZoneLocal({
             </ul>
           </div>
 
-          <div className="bg-white/5 border border-white/10 rounded-[20px] p-6">
+          <div className="bg-white/5 border border-white/10 rounded-[24px] p-6">
             <h3 className="h2-sm text-white mb-4">Reperes locaux</h3>
             <ul className="flex flex-col gap-2 text-[14px] text-white/75">
               {local.landmarks.map((l) => (
@@ -47,7 +47,7 @@ export default function ServiceZoneLocal({
             </ul>
           </div>
 
-          <div className="bg-white/5 border border-white/10 rounded-[20px] p-6">
+          <div className="bg-white/5 border border-white/10 rounded-[24px] p-6">
             <h3 className="h2-sm text-white mb-4">Quartiers couverts</h3>
             <ul className="flex flex-col gap-2 text-[14px] text-white/75">
               {local.quartiers.map((q) => (
@@ -59,7 +59,7 @@ export default function ServiceZoneLocal({
             </ul>
           </div>
 
-          <div className="bg-white/5 border border-white/10 rounded-[20px] p-6">
+          <div className="bg-white/5 border border-white/10 rounded-[24px] p-6">
             <h3 className="h2-sm text-white mb-4">Commerces suivis</h3>
             <ul className="flex flex-col gap-2 text-[14px] text-white/75">
               {local.commerces.map((c) => (

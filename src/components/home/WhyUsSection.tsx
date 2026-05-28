@@ -25,7 +25,7 @@ export default function WhyUsSection() {
           {whyUs.items.map((item) => (
             <div
               key={item.title}
-              className="bg-white rounded-[20px] p-7 flex flex-col gap-3 min-h-[230px]"
+              className="bg-white rounded-[24px] p-7 flex flex-col gap-3 min-h-[230px]"
             >
               <span className="w-10 h-10 flex items-center justify-center mb-3">
                 <Image src={item.icon} alt="" width={38} height={38} />
